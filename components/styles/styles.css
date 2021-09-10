@@ -6,12 +6,12 @@
 
 @font-face {
   font-family: 'Sarabun-Regular';
-  src: url('../util/fonts/Sarabun/Sarabun-Regular.ttf');
+  src: url('../../util/fonts/Sarabun/Sarabun-Regular.ttf');
   font-display: swap;
 }
 @font-face {
   font-family: 'Sarabun-Bold';
-  src: url('../util/fonts/Sarabun/Sarabun-Bold.ttf');
+  src: url('../../util/fonts/Sarabun/Sarabun-Bold.ttf');
   font-display: swap;
 }
 
@@ -23,11 +23,15 @@ body {
   --white: #fff;
   --primaryColor: #191b1f;
   --secondaryColor: #ff8125;
+  --bgColor: #f3f3f3;
 }
 
 h1,
 h2,
-p {
+h3,
+p,
+span,
+a {
   margin: 0;
   padding: 0;
 }

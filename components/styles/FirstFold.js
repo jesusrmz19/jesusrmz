@@ -12,11 +12,17 @@ const FirstFold = styled.section`
     h2 {
       font-family: var(--bold);
       color: var(--white);
+      span {
+        color: var(--secondaryColor);
+      }
     }
     p {
       margin-top: 8px;
       font-family: var(--regular);
       color: var(--white);
+      span {
+        color: var(--secondaryColor);
+      }
     }
     .links {
       display: flex;
