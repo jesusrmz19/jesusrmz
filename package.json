@@ -12,11 +12,15 @@
   "author": "Jesus Ramirez",
   "license": "ISC",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-brands-svg-icons": "^5.15.4",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.15",
     "components": "^0.1.0",
     "next": "^11.1.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "styled": "^1.0.0"
+    "styled-components": "^5.3.1"
   },
   "devDependencies": {
     "netlify-plugin-cache-nextjs": "^1.6.1"
