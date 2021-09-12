@@ -12,6 +12,7 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
     --regular: 'Sarabun-Regular';
     --bold: 'Sarabun-Bold';
+    --light: 'Sarabun-Light';
     --white: #fff;
     --primaryColor: #191b1f;
     --secondaryColor: #ff8125;

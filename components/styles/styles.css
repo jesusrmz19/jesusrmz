@@ -8,3 +8,8 @@
   src: url('../../public/Sarabun-Bold.ttf');
   font-display: swap;
 }
+@font-face {
+  font-family: 'Sarabun-Light';
+  src: url('../../public/Sarabun-Light.ttf');
+  font-display: swap;
+}

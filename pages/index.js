@@ -15,7 +15,7 @@ function Home() {
           </h2>
           <p>
             I'm a self-taught web developer that uses <span>React</span>,
-            <span>JavaScript</span>, and plain <span>CSS </span>&
+            <span> JavaScript</span>, and plain <span>CSS </span>&
             <span> HTML</span> to build cool things.
           </p>
           <div className="links">
