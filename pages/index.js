@@ -9,8 +9,19 @@ import experiments from '../content/experiments.json';
 import Experiment from '../components/Experiment';
 import sideprojects from '../content/sideprojects.json';
 import ContactStyles from '../components/styles/ContactStyles';
+import RecentBlogs from '../components/styles/RecentBlogs';
+import { getSortedPostsData } from '../lib/posts';
 
-function Home() {
+export async function getStaticProps() {
+  const recentPostsData = getSortedPostsData();
+  return {
+    props: {
+      recentPostsData,
+    },
+  };
+}
+
+function Home({ recentPostsData }) {
   return (
     <main>
       <FirstFold>
@@ -66,6 +77,14 @@ function Home() {
           the contact below or <a href="#">shoot me an email</a>.
         </p>
       </ContactStyles> */}
+      <RecentBlogs>
+        <h3>Recent Blogs</h3>
+        <div className="blogs">
+          {recentPostsData.map(({ id, description, title }) => (
+            <p key={id}>{title}</p>
+          ))}
+        </div>
+      </RecentBlogs>
     </main>
   );
 }

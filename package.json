@@ -17,9 +17,14 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/react-fontawesome": "^0.1.15",
     "components": "^0.1.0",
+    "date-fns": "^2.23.0",
+    "gray-matter": "^4.0.3",
     "next": "^11.1.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "remark": "^14.0.1",
+    "remark-highlight.js": "^7.0.1",
+    "remark-html": "^14.0.1",
     "styled-components": "^5.3.1"
   },
   "devDependencies": {
