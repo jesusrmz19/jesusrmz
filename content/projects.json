@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Example One",
+    "id": "example-one",
+    "description": "This is a silly description of what  this project was and how it works and why it matters and hey look at me",
+    "repo": true,
+    "live": true,
+    "image": "TBD"
+  },
+  {
+    "name": "Example Two",
+    "id": "example-two",
+    "description": "This is a silly description of what  this project was and how it works and why it matters and hey look at me",
+    "repo": false,
+    "live": true,
+    "image": "TBD"
+  },
+  {
+    "name": "Example Three",
+    "id": "example-three",
+    "description": "This is a silly description of what  this project was and how it works and why it matters and hey look at me",
+    "repo": true,
+    "live": true,
+    "image": "TBD"
+  }
+]

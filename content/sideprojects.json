@@ -1,7 +1,7 @@
 [
   {
     "name": "Example One",
-    "id": "example-one",
+    "id": "sideproject-one",
     "description": "This is a silly description of what  this project was and how it works and why it matters and hey look at me",
     "repo": true,
     "live": true,
@@ -9,9 +9,17 @@
   },
   {
     "name": "Example Two",
-    "id": "example-two",
+    "id": "sideproject-two",
     "description": "This is a silly description of what  this project was and how it works and why it matters and hey look at me",
     "repo": false,
+    "live": true,
+    "image": "TBD"
+  },
+  {
+    "name": "Example Three",
+    "id": "sideproject-three",
+    "description": "This is a silly description of what  this project was and how it works and why it matters and hey look at me",
+    "repo": true,
     "live": true,
     "image": "TBD"
   }

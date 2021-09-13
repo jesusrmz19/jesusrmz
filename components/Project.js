@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 
 const ProjectStyles = styled.div`
-  border: 1px solid red;
-  margin: 16px 0;
+  margin: 1.5rem 0;
   .project--img {
     width: 100%;
     background: var(--primaryColor);
