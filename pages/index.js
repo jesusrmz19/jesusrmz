@@ -8,20 +8,9 @@ import ExperimentsSection from '../components/styles/ExperimentsSection';
 import experiments from '../content/experiments.json';
 import Experiment from '../components/Experiment';
 import sideprojects from '../content/sideprojects.json';
-import Skills from '../components/styles/Skills';
 import ContactStyles from '../components/styles/ContactStyles';
 
 function Home() {
-  const skills = [
-    'html5',
-    'css3-alt',
-    'sass',
-    'js',
-    'react',
-    'git-alt',
-    'github',
-    'figma',
-  ];
   return (
     <main>
       <FirstFold>
@@ -70,19 +59,6 @@ function Home() {
           <Project details={sideprojects[0]}></Project>
         </div>
       </LatestWork>
-      <Skills>
-        <h3>Skills & Tools</h3>
-        <p>
-          These are some of the technologies that I use to bring things to life
-        </p>
-        <div className="skills">
-          {skills.map((skill) => (
-            <i key={skill}>
-              <FontAwesomeIcon icon={['fab', skill]}></FontAwesomeIcon>
-            </i>
-          ))}
-        </div>
-      </Skills>
       {/* <ContactStyles>
         <h3>Hit me up!</h3>
         <p>
