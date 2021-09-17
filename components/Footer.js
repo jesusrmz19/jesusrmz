@@ -68,7 +68,7 @@ export default function Footer() {
       </div>
       <div className="footer--contact">
         <p className="footer--title">Contact</p>
-        <p className="footer--txt">Let's work together!</p>
+        <a className="footer--txt">Let's work together!</a>
         <a className="footer--btn">Email Me</a>
       </div>
       <div className="footer--socials">
