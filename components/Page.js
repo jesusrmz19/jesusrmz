@@ -1,4 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components';
+import Footer from './Footer';
 
 const GlobalStyles = createGlobalStyle`
   *,
@@ -14,8 +15,10 @@ const GlobalStyles = createGlobalStyle`
     --bold: 'Sarabun-Bold';
     --light: 'Sarabun-Light';
     --white: #fff;
+    --lightWhite: rgba(255,255,255,0.6);
     --primaryColor: #191b1f;
     --secondaryColor: #ff8125;
+    --thirdColor: #5E5F62;
     --bgColor: #f3f3f3;
   }
 
@@ -41,6 +44,7 @@ export default function Page({ children }) {
     <div>
       <GlobalStyles />
       {children}
+      <Footer></Footer>
     </div>
   );
 }
