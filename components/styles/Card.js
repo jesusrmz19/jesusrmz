@@ -45,7 +45,6 @@ const Card = styled.article`
   .card--date {
     margin-top: 0.8rem;
     line-height: 1.5;
-    font-size: 1.2rem;
     font-family: var(--light);
   }
 `;

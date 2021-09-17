@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const ProjectStyles = styled.div`
-  margin: 1.5rem 0 3rem 0;
+  margin-top: 2.5rem;
   .project--img {
     width: 100%;
     margin: 0 auto;

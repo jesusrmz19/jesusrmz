@@ -46,13 +46,13 @@ function Home({ recentPostsData, allProjects, allExperiments, allBlogPosts }) {
             <span> HTML</span> to build cool things.
           </p>
           <div className="links">
-            <a href="#" className="links--icons">
+            <a href="https://github.com/jesusrmz19" className="links--icons">
               <FontAwesomeIcon icon={['fab', 'github']} />
             </a>
-            <a href="#" className="links--icons">
+            <a href="https://codepen.io/jesusrmz" className="links--icons">
               <FontAwesomeIcon icon={['fab', 'codepen']} />
             </a>
-            <a href="#" className="links--icons">
+            <a href="https://twitter.com/jesusrmz_" className="links--icons">
               <FontAwesomeIcon icon={['fab', 'twitter']} />
             </a>
           </div>
@@ -78,17 +78,6 @@ function Home({ recentPostsData, allProjects, allExperiments, allBlogPosts }) {
           ))}
         </div>
       </ExperimentsSection>
-      <LatestWork>
-        <h3>Last Side Projects</h3>
-        <div className="sideprojects">Working on this</div>
-      </LatestWork>
-      {/* <ContactStyles>
-        <h3>Hit me up!</h3>
-        <p>
-          If you have a new project, idea or any type of inquiry, let me know in
-          the contact below or <a href="#">shoot me an email</a>.
-        </p>
-      </ContactStyles> */}
       <RecentBlogs>
         <h3>Recent Blogs</h3>
         <div className="blogs">
