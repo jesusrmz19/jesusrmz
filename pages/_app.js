@@ -10,7 +10,7 @@ library.add(fab);
 export default function MyApp({ Component, pageProps }) {
   return (
     <Page>
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
     </Page>
   );
 }

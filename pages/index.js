@@ -12,19 +12,16 @@ import sideprojects from '../content/sideprojects.json';
 import ContactStyles from '../components/styles/ContactStyles';
 import RecentBlogs from '../components/styles/RecentBlogs';
 import Card from '../components/styles/Card';
-import { getSortedPostsData } from '../lib/posts';
 import { getAllBlogs, getExperiments, getProjects } from '../lib/getFunctions';
 import { setDate } from '../lib/helpers';
 
 export async function getStaticProps() {
-  const recentPostsData = getSortedPostsData();
   const allProjects = await getProjects();
   const allExperiments = await getExperiments();
   const allBlogPosts = await getAllBlogs();
   console.log(allBlogPosts);
   return {
     props: {
-      recentPostsData,
       allProjects,
       allExperiments,
       allBlogPosts,
@@ -32,7 +29,7 @@ export async function getStaticProps() {
   };
 }
 
-function Home({ recentPostsData, allProjects, allExperiments, allBlogPosts }) {
+function Home({ allProjects, allExperiments, allBlogPosts }) {
   return (
     <main>
       <FirstFold>
