@@ -11,20 +11,22 @@ import sideprojects from '../content/sideprojects.json';
 import ContactStyles from '../components/styles/ContactStyles';
 import RecentBlogs from '../components/styles/RecentBlogs';
 import { getSortedPostsData } from '../lib/posts';
-import { getProjects } from '../lib/getFunctions';
+import { getExperiments, getProjects } from '../lib/getFunctions';
 
 export async function getStaticProps() {
   const recentPostsData = getSortedPostsData();
   const allProjects = await getProjects();
+  const allExperiments = await getExperiments();
   return {
     props: {
       recentPostsData,
       allProjects,
+      allExperiments,
     },
   };
 }
 
-function Home({ recentPostsData, allProjects }) {
+function Home({ recentPostsData, allProjects, allExperiments }) {
   return (
     <main>
       <FirstFold>
@@ -62,8 +64,11 @@ function Home({ recentPostsData, allProjects }) {
       <ExperimentsSection>
         <h3>Experiments</h3>
         <div className="experiments">
-          {experiments.map((experiment) => (
-            <Experiment key={experiment.id} details={experiment}></Experiment>
+          {allExperiments.map((experiment) => (
+            <Experiment
+              key={experiment.title}
+              details={experiment}
+            ></Experiment>
           ))}
         </div>
       </ExperimentsSection>
