@@ -3,20 +3,19 @@ import styled from 'styled-components';
 const ExperimentStyles = styled.div`
   background: var(--white);
   width: 100%;
-  height: 200px;
+  height: 250px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 0 1rem;
   .experiment--img {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     img {
       width: 100%;
-
       border-radius: 50%;
     }
   }
