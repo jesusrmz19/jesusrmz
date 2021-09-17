@@ -10,17 +10,19 @@ function PostsPage({ allPosts }) {
         <h2>Welcome to my page of blog posts</h2>
         <div>
           {allPosts.map((post, index) => (
-            <article key={post.slug.current}>
-              <span>
-                <img
-                  src={post.mainImage.asset.url}
-                  alt={post.mainImage.alt}
-                ></img>
+            <Link href={`/posts/${post.slug.current}`} key={post.slug.current}>
+              <article>
                 <span>
-                  <h3>{post.title}</h3>
+                  <img
+                    src={post.mainImage.asset.url}
+                    alt={post.mainImage.alt}
+                  ></img>
+                  <span>
+                    <h3>{post.title}</h3>
+                  </span>
                 </span>
-              </span>
-            </article>
+              </article>
+            </Link>
           ))}
         </div>
       </section>
