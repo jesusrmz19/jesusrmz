@@ -36,5 +36,22 @@ export default {
         hotspot: true,
       },
     },
+    {
+      title: 'Project Technologies',
+      name: 'projectTechnologies',
+      type: 'array',
+      of: [{ type: 'string' }],
+      options: {
+        list: [
+          { title: 'HTML', value: 'html5' },
+          { title: 'CSS', value: 'css3-alt' },
+          { title: 'SCSS', value: 'sass' },
+          { title: 'JavaScript', value: 'js-square' },
+          { title: 'Parcel', value: 'box-open' },
+          { title: 'React', value: 'react' },
+          { title: 'Gulp', value: 'gulp' },
+        ],
+      },
+    },
   ],
 };

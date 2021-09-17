@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const ProjectStyles = styled.div`
   margin-top: 2.5rem;
@@ -25,6 +26,13 @@ const ProjectStyles = styled.div`
       margin-left: 10px;
     }
   }
+  .project--tech {
+    display: flex;
+    padding: 1.5rem 1rem;
+    font-size: 1.5rem;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
 `;
 
 const LiveButton = styled.a`
@@ -45,7 +53,8 @@ const LiveButton = styled.a`
 `;
 
 export default function Project({ details }) {
-  const { title, description, link, repo, mainImage } = details;
+  const { title, description, link, repo, mainImage, projectTechnologies } =
+    details;
   return (
     <ProjectStyles>
       <div className="project--img">
@@ -54,6 +63,11 @@ export default function Project({ details }) {
       <div className="project--txt">
         <p className="project--name">{title}</p>
         <p className="project--description">{description}</p>
+      </div>
+      <div className="project--tech">
+        {projectTechnologies.map((tech) => (
+          <FontAwesomeIcon key={tech} icon={['fab', tech]} />
+        ))}
       </div>
       <div className="project--btns">
         <LiveButton href={link} style={link ? {} : { display: 'none' }}>
