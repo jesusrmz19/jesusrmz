@@ -1,4 +1,5 @@
 import Button from '../components/styles/Button';
+import Link from 'next/link';
 import FirstFold from '../components/styles/FirstFold';
 import LatestWork from '../components/styles/LatestWork';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -10,23 +11,28 @@ import Experiment from '../components/Experiment';
 import sideprojects from '../content/sideprojects.json';
 import ContactStyles from '../components/styles/ContactStyles';
 import RecentBlogs from '../components/styles/RecentBlogs';
+import Card from '../components/styles/Card';
 import { getSortedPostsData } from '../lib/posts';
-import { getExperiments, getProjects } from '../lib/getFunctions';
+import { getAllBlogs, getExperiments, getProjects } from '../lib/getFunctions';
+import { setDate } from '../lib/helpers';
 
 export async function getStaticProps() {
   const recentPostsData = getSortedPostsData();
   const allProjects = await getProjects();
   const allExperiments = await getExperiments();
+  const allBlogPosts = await getAllBlogs();
+  console.log(allBlogPosts);
   return {
     props: {
       recentPostsData,
       allProjects,
       allExperiments,
+      allBlogPosts,
     },
   };
 }
 
-function Home({ recentPostsData, allProjects, allExperiments }) {
+function Home({ recentPostsData, allProjects, allExperiments, allBlogPosts }) {
   return (
     <main>
       <FirstFold>
@@ -74,7 +80,7 @@ function Home({ recentPostsData, allProjects, allExperiments }) {
       </ExperimentsSection>
       <LatestWork>
         <h3>Last Side Projects</h3>
-        <div className="sideprojects"></div>
+        <div className="sideprojects">Working on this</div>
       </LatestWork>
       {/* <ContactStyles>
         <h3>Hit me up!</h3>
@@ -86,8 +92,22 @@ function Home({ recentPostsData, allProjects, allExperiments }) {
       <RecentBlogs>
         <h3>Recent Blogs</h3>
         <div className="blogs">
-          {recentPostsData.map(({ id, description, title }) => (
-            <p key={id}>{title}</p>
+          {allBlogPosts.map((post) => (
+            <Link href={`/posts/${post.slug.current}`} key={post.slug.current}>
+              <Card className="card">
+                <div className="card--img">
+                  <img
+                    src={post.mainImage.asset.url}
+                    alt={post.mainImage.alt}
+                  ></img>
+                </div>
+                <div className="card--txt">
+                  <h4 className="card--title">{post.title}</h4>
+                  <p className="card--description">{post.description}</p>
+                  <p className="card--date">{setDate(post.date)}</p>
+                </div>
+              </Card>
+            </Link>
           ))}
         </div>
       </RecentBlogs>

@@ -21,7 +21,7 @@ const GlobalStyles = createGlobalStyle`
 
   h1,
   h2,
-  h3,
+  h3, h4,
   p,
   span,
   a {
