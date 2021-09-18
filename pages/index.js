@@ -12,24 +12,30 @@ import sideprojects from '../content/sideprojects.json';
 import ContactStyles from '../components/styles/ContactStyles';
 import RecentBlogs from '../components/styles/RecentBlogs';
 import Card from '../components/styles/Card';
-import { getAllBlogs, getExperiments, getProjects } from '../lib/getFunctions';
+import {
+  getAllBlogs,
+  getExperiments,
+  getProjects,
+  getSideProjects,
+} from '../lib/getFunctions';
 import { setDate } from '../lib/helpers';
 
 export async function getStaticProps() {
   const allProjects = await getProjects();
   const allExperiments = await getExperiments();
   const allBlogPosts = await getAllBlogs();
-  console.log(allBlogPosts);
+  const allSideProjects = await getSideProjects();
   return {
     props: {
       allProjects,
       allExperiments,
       allBlogPosts,
+      allSideProjects,
     },
   };
 }
 
-function Home({ allProjects, allExperiments, allBlogPosts }) {
+function Home({ allProjects, allExperiments, allBlogPosts, allSideProjects }) {
   return (
     <main>
       <FirstFold>
@@ -75,6 +81,12 @@ function Home({ allProjects, allExperiments, allBlogPosts }) {
           ))}
         </div>
       </ExperimentsSection>
+      <LatestWork>
+        <h3>Last Side Projects</h3>
+        <div className="work">
+          <Project details={allSideProjects[0]}></Project>
+        </div>
+      </LatestWork>
       <RecentBlogs>
         <h3>Recent Blogs</h3>
         <div className="blogs">

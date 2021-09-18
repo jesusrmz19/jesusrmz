@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { device } from '../../lib/breakpoints';
 
 const ExperimentsSection = styled.section`
   background: var(--bgColor);
@@ -8,6 +9,15 @@ const ExperimentsSection = styled.section`
     font-family: var(--bold);
     text-align: center;
     margin-bottom: 1rem;
+  }
+  @media ${device.laptop} {
+    padding: 2rem 0;
+    h3 {
+      margin-bottom: 2rem;
+    }
+    .experiments {
+      display: flex;
+    }
   }
 `;
 

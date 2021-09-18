@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Button from './styles/Button';
+import { device } from '../lib/breakpoints';
 
 const FooterStyles = styled.footer`
   background: var(--thirdColor);
@@ -55,6 +56,42 @@ const FooterStyles = styled.footer`
       background: var(--secondaryColor);
     }
   }
+  @media ${device.laptop} {
+    padding: 2.5rem 3rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-rows: auto auto;
+    .footer--title,
+    .footer--txt {
+      line-height: 1.5;
+    }
+    .footer--menu {
+      grid-column: 1/3;
+      grid-row: 1;
+    }
+    .footer--contact {
+      grid-column: 3/4;
+      grid-row: 1;
+    }
+    .footer--socials {
+      grid-column: 4/5;
+      grid-row: 1;
+    }
+    .footer--rights {
+      grid-column: 1/-1;
+      grid-row: 2;
+      display: flex;
+      flex-direction: row;
+      &-p {
+        margin-left: 8px;
+      }
+    }
+    .footer--contact,
+    .footer--socials,
+    .footer--rights {
+      margin-top: 0rem;
+    }
+  }
 `;
 
 export default function Footer() {
@@ -80,7 +117,7 @@ export default function Footer() {
       </div>
       <div className="footer--rights">
         <p>2021 Jesús Ramírez.</p>
-        <p>All rights reserved.</p>
+        <p className="footer--rights-p">All rights reserved.</p>
       </div>
     </FooterStyles>
   );

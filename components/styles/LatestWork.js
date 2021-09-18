@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { device } from '../../lib/breakpoints';
 
 const LatestWork = styled.section`
   background: var(--bgColor);
@@ -7,6 +8,9 @@ const LatestWork = styled.section`
   h3 {
     font-family: var(--bold);
     text-align: center;
+  }
+  @media ${device.laptop} {
+    padding: 5rem 3rem;
   }
 `;
 
