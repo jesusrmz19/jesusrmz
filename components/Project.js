@@ -34,7 +34,7 @@ const ProjectStyles = styled.div`
     justify-content: space-between;
     margin-bottom: 8px;
   }
-  @media ${device.latptop} {
+  @media ${device.laptop} {
     margin-top: 4rem;
     padding: 2rem;
     display: grid;
