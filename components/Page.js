@@ -1,5 +1,6 @@
 import styled, { createGlobalStyle } from 'styled-components';
 import Footer from './Footer';
+import Navbar from './Navbar';
 
 const GlobalStyles = createGlobalStyle`
   *,
@@ -27,9 +28,13 @@ const GlobalStyles = createGlobalStyle`
   h3, h4,
   p,
   span,
-  a {
+  a, ul, li {
     margin: 0;
     padding: 0;
+  }
+
+  ul {
+    list-style-type: none;
   }
 
   button {
@@ -43,6 +48,7 @@ export default function Page({ children }) {
   return (
     <div>
       <GlobalStyles />
+      <Navbar></Navbar>
       {children}
       <Footer></Footer>
     </div>
