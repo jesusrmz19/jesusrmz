@@ -1,10 +1,18 @@
 import { useRouter } from 'next/router';
 import sanityClient from '../../client';
+import BlockContent from '@sanity/block-content-to-react';
 
 export default function SinglePostPage({ data }) {
   return (
     <div>
       <h1>Title: {data[0].title}</h1>
+      <div>
+        <BlockContent
+          blocks={data[0].body}
+          projectId="nxsxkxc5"
+          dataset="production"
+        ></BlockContent>
+      </div>
     </div>
   );
 }
@@ -23,7 +31,6 @@ export async function getStaticPaths() {
       },
     };
   });
-  console.log(paths);
   return {
     paths,
     fallback: false,
@@ -42,7 +49,6 @@ export async function getStaticProps({ params }) {
       },
       body,
   }`);
-  console.log(data);
   return {
     props: {
       data,
