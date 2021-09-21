@@ -11,6 +11,9 @@ const LatestWork = styled.section`
   }
   @media ${device.laptop} {
     padding: 5rem 3rem;
+    h3 {
+      font-size: 28px;
+    }
   }
 `;
 

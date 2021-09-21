@@ -14,6 +14,7 @@ const ExperimentsSection = styled.section`
     padding: 2rem 0;
     h3 {
       margin-bottom: 2rem;
+      font-size: 28px;
     }
     .experiments {
       display: flex;

@@ -53,6 +53,7 @@ const ProjectStyles = styled.div`
     }
     .project--name {
       margin-bottom: 20px;
+      font-size: 25px;
     }
     .project--tech {
       grid-column: 2/-1;
@@ -76,13 +77,35 @@ const LiveButton = styled.a`
   text-decoration: none;
   font-family: var(--bold);
   color: var(--white);
-  width: 100px;
+  width: 120px;
   text-align: center;
-  padding: 0.6rem;
+  padding: 0.8rem;
   cursor: pointer;
   transition: background ease 0.2s;
+  border: 3px solid var(--primaryColor);
+  font-size: 13.3px;
   &:hover {
     background: var(--secondaryColor);
+  }
+`;
+
+const RepoButton = styled.a`
+  display: inline-block;
+  background: transparent;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: var(--bold);
+  color: var(--primaryColor);
+  border: 3px solid var(--primaryColor);
+  width: 120px;
+  text-align: center;
+  padding: 0.8rem;
+  cursor: pointer;
+  transition: all ease 0.2s;
+  font-size: 13.3px;
+  &:hover {
+    background: var(--secondaryColor);
+    color: var(--white);
   }
 `;
 
@@ -107,9 +130,9 @@ export default function Project({ details }) {
         <LiveButton href={link} style={link ? {} : { display: 'none' }}>
           live page
         </LiveButton>
-        <LiveButton href={repo} style={repo ? {} : { display: 'none' }}>
+        <RepoButton href={repo} style={repo ? {} : { display: 'none' }}>
           repo
-        </LiveButton>
+        </RepoButton>
       </div>
     </ProjectStyles>
   );

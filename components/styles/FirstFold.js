@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { device } from '../../lib/breakpoints';
 
 const FirstFold = styled.section`
   height: 100vh;
@@ -38,6 +39,16 @@ const FirstFold = styled.section`
       }
       a + a {
         margin-left: 15px;
+      }
+    }
+  }
+  @media ${device.laptop} {
+    .container {
+      h2 {
+        font-size: 35px;
+      }
+      p {
+        font-size: 20px;
       }
     }
   }

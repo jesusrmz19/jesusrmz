@@ -17,6 +17,9 @@ const RecentBlogs = styled.section`
       margin: 0 auto;
       margin-top: 1rem;
     }
+    h3 {
+      font-size: 28px;
+    }
   }
 `;
 
