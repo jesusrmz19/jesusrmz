@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Button from './styles/Button';
+import Link from 'next/link';
 import { device } from '../lib/breakpoints';
 
 const FooterStyles = styled.footer`
@@ -11,7 +12,9 @@ const FooterStyles = styled.footer`
     color: var(--white);
     font-size: 1.2rem;
   }
-  .footer--txt {
+  .footer--txt,
+  a {
+    text-decoration: none;
     font-family: var(--light);
     color: var(--lightWhite);
     margin-top: 0.4rem;
@@ -101,7 +104,7 @@ export default function Footer() {
         <p className="footer--title">Menu</p>
         <a className="footer--txt">Work</a>
         <a className="footer--txt">Experiments</a>
-        <a className="footer--txt">Blog</a>
+        <Link href="/posts/">Blog</Link>
       </div>
       <div className="footer--contact">
         <p className="footer--title">Contact</p>

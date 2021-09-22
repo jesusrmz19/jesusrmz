@@ -1,6 +1,6 @@
 import styled, { createGlobalStyle } from 'styled-components';
 import Footer from './Footer';
-import Navbar from './Navbar';
+import Header from './Header';
 
 const GlobalStyles = createGlobalStyle`
   *,
@@ -48,7 +48,7 @@ export default function Page({ children }) {
   return (
     <div>
       <GlobalStyles />
-      <Navbar></Navbar>
+      <Header></Header>
       {children}
       <Footer></Footer>
     </div>

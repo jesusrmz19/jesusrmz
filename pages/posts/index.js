@@ -20,9 +20,8 @@ function PostsPage({ allBlogPosts }) {
   return (
     <PostsPageStyles>
       <section>
-        <h1>Blog Posts</h1>
-        <h2>Welcome to my page of blog posts</h2>
-        <div>
+        <h1>Blog</h1>
+        <div className="container">
           {allBlogPosts.map((post) => (
             <Link href={`/posts/${post.slug.current}`} key={post.slug.current}>
               <Card className="card">
