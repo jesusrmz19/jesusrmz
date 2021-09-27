@@ -24,6 +24,9 @@ const HeaderStyles = styled.header`
   .button--container {
     width: 50%;
     text-align: right;
+    button {
+      color: var(--white);
+    }
   }
 `;
 

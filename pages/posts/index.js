@@ -5,6 +5,7 @@ import PostsPageStyles from '../../components/styles/PostsPage';
 import { getAllBlogs } from '../../lib/getFunctions';
 import Card from '../../components/styles/Card';
 import { setDate } from '../../lib/helpers';
+import { useNav } from '../../lib/navState';
 
 export async function getStaticProps() {
   const allBlogPosts = await getAllBlogs();
@@ -17,6 +18,10 @@ export async function getStaticProps() {
 }
 
 function PostsPage({ allBlogPosts }) {
+  const { closeNav } = useNav();
+  useEffect(() => {
+    closeNav();
+  }, []);
   return (
     <PostsPageStyles>
       <section>

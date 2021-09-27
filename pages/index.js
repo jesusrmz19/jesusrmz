@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import Button from '../components/styles/Button';
 import Link from 'next/link';
 import FirstFold from '../components/styles/FirstFold';
@@ -19,6 +20,7 @@ import {
   getSideProjects,
 } from '../lib/getFunctions';
 import { setDate } from '../lib/helpers';
+import { useNav } from '../lib/navState';
 
 export async function getStaticProps() {
   const allProjects = await getProjects();
@@ -36,6 +38,10 @@ export async function getStaticProps() {
 }
 
 function Home({ allProjects, allExperiments, allBlogPosts, allSideProjects }) {
+  const { closeNav } = useNav();
+  useEffect(() => {
+    closeNav();
+  }, []);
   return (
     <main>
       <FirstFold>

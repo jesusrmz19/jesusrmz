@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import { useNav } from '../lib/navState';
 
@@ -23,14 +24,31 @@ const NavbarStyles = styled.nav`
       }
     }
   }
+  .menu--item.active {
+    a {
+      color: var(--secondaryColor);
+    }
+  }
 `;
 
 export default function Navbar() {
+  const router = useRouter();
   const { navOpen } = useNav();
   return (
     <NavbarStyles open={navOpen}>
       <ul className="menu">
-        <li className="menu--item">
+        <li
+          className={
+            router.pathname === '/' ? 'menu--item active' : 'menu--item'
+          }
+        >
+          <Link href="/">Home</Link>
+        </li>
+        <li
+          className={
+            router.pathname === '/posts' ? 'menu--item active' : 'menu--item'
+          }
+        >
           <Link href="/posts/">Blog</Link>
         </li>
         <li className="menu--item">Contact</li>
