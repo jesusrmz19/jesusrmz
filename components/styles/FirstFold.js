@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import { device } from '../../lib/breakpoints';
 
 const FirstFold = styled.section`
-  height: 100vh;
   width: 100%;
+  height: 70vh;
   background: var(--firstFold);
   display: flex;
   align-items: center;

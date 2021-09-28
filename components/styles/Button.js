@@ -12,6 +12,10 @@ const Button = styled.button`
   &:hover {
     background: var(--secondaryColor);
   }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 `;
 
 export default Button;

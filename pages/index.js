@@ -65,10 +65,12 @@ function Home({ allProjects, allExperiments, allBlogPosts, allSideProjects }) {
               <FontAwesomeIcon icon={['fab', 'twitter']} />
             </a>
           </div>
-          <Button>Explore Work</Button>
+          <Button>
+            <a href="#work">EXPLORE WORK</a>
+          </Button>
         </div>
       </FirstFold>
-      <LatestWork>
+      <LatestWork id="work">
         <h3>Latest Work</h3>
         <div className="work">
           {allProjects.map((project) => (
