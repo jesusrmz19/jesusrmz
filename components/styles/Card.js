@@ -5,7 +5,7 @@ const Card = styled.article`
     transform: translateY(-5px);
   }
   cursor: pointer;
-  background-color: var(--bgColor);
+  background-color: var(--white);
   width: 260px;
   --minHeight: 350px;
   min-height: var(--minHeight);

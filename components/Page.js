@@ -18,9 +18,25 @@ const GlobalStyles = createGlobalStyle`
     --white: #fff;
     --lightWhite: rgba(255,255,255,0.6);
     --primaryColor: #191b1f;
-    --secondaryColor: #ff8125;
     --thirdColor: #5E5F62;
+  }
+  body,
+  body[data-theme="light"]{
+    --firstFold: #f3f3f3;
+    --FFText: #191b1f;
     --bgColor: #f3f3f3;
+    --fontColor: #191b1f;
+    --secondaryColor: #ff8125;
+    --btnBg: #191b1f;
+    --btnTxt: #f3f3f3;
+  }
+  body[data-theme="dark"]{
+    --firstFold: #191B1F;
+    --FFText: #f3f3f3;
+    --fontColor: #f3f3f3;
+    --bgColor: #191b1f;
+    --btnBg: #F3F3F3;
+    --btnTxt: #191b1f;
   }
 
   h1,

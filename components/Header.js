@@ -4,7 +4,7 @@ import { useNav } from '../lib/navState';
 import Navbar from './Navbar';
 
 const HeaderStyles = styled.header`
-  background: var(--thirdColor);
+  background: var(--firstFold);
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -15,7 +15,7 @@ const HeaderStyles = styled.header`
     text-transform: uppercase;
     font-family: var(--light);
     font-size: 12px;
-    color: var(--white);
+    color: var(--FFText);
     cursor: pointer;
     z-index: 10;
     width: 50%;
@@ -25,7 +25,7 @@ const HeaderStyles = styled.header`
     width: 50%;
     text-align: right;
     button {
-      color: var(--white);
+      color: var(--FFText);
     }
   }
 `;

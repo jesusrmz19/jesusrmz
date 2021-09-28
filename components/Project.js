@@ -72,17 +72,17 @@ const ProjectStyles = styled.div`
 
 const LiveButton = styled.a`
   display: inline-block;
-  background: var(--primaryColor);
+  background: var(--btnBg);
   text-transform: uppercase;
   text-decoration: none;
   font-family: var(--bold);
-  color: var(--white);
+  color: var(--btnTxt);
   width: 120px;
   text-align: center;
   padding: 0.8rem;
   cursor: pointer;
   transition: background ease 0.2s;
-  border: 3px solid var(--primaryColor);
+  border: 3px solid var(--btnBg);
   font-size: 13.3px;
   &:hover {
     background: var(--secondaryColor);
@@ -95,8 +95,8 @@ const RepoButton = styled.a`
   text-transform: uppercase;
   text-decoration: none;
   font-family: var(--bold);
-  color: var(--primaryColor);
-  border: 3px solid var(--primaryColor);
+  color: var(--btnBg);
+  border: 3px solid var(--btnBg);
   width: 120px;
   text-align: center;
   padding: 0.8rem;

@@ -9,6 +9,7 @@ const ExperimentsSection = styled.section`
     font-family: var(--bold);
     text-align: center;
     margin-bottom: 1rem;
+    color: var(--fontColor);
   }
   @media ${device.laptop} {
     padding: 2rem 0;

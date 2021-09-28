@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useNav } from '../lib/navState';
 
@@ -12,7 +13,7 @@ const NavbarStyles = styled.nav`
     flex-direction: column;
     align-items: center;
     &--item {
-      color: var(--white);
+      color: var(--FFText);
       text-transform: uppercase;
       font-family: var(--bold);
       letter-spacing: 1.2px;
@@ -20,7 +21,7 @@ const NavbarStyles = styled.nav`
       a {
         text-transform: uppercase;
         text-decoration: none;
-        color: var(--white);
+        color: var(--FFText);
       }
     }
   }
@@ -29,11 +30,26 @@ const NavbarStyles = styled.nav`
       color: var(--secondaryColor);
     }
   }
+  .menu--item {
+    button {
+      color: var(--white);
+      text-transform: uppercase;
+      font-family: var(--bold);
+      font-size: 16px;
+    }
+  }
 `;
 
 export default function Navbar() {
   const router = useRouter();
-  const { navOpen } = useNav();
+  const [activeTheme, setActiveTheme] = useState('light');
+  const inactiveTheme = activeTheme === 'light' ? 'dark' : 'light';
+  const { navOpen, closeNav } = useNav();
+
+  useEffect(() => {
+    document.body.dataset.theme = activeTheme;
+  }, [activeTheme]);
+
   return (
     <NavbarStyles open={navOpen}>
       <ul className="menu">
@@ -52,6 +68,9 @@ export default function Navbar() {
           <Link href="/posts/">Blog</Link>
         </li>
         <li className="menu--item">Contact</li>
+        <li className="menu--item btn">
+          <button onClick={() => setActiveTheme(inactiveTheme)}>🌞🌙</button>
+        </li>
       </ul>
     </NavbarStyles>
   );

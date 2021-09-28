@@ -3,11 +3,11 @@ import { device } from '../../lib/breakpoints';
 
 const RecentBlogs = styled.section`
   padding: 2rem 1rem;
-  background: var(--primaryColor);
+  background: var(--bgColor);
   h3 {
     text-align: center;
     font-family: var(--bold);
-    color: var(--white);
+    color: var(--fontColor);
   }
   @media ${device.laptop} {
     padding: 4rem 3rem;

@@ -5,6 +5,7 @@ const LatestWork = styled.section`
   background: var(--bgColor);
   width: 100%;
   padding: 2rem 1rem 2rem 1rem;
+  color: var(--fontColor);
   h3 {
     font-family: var(--bold);
     text-align: center;
