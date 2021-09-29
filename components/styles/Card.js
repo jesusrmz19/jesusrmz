@@ -17,6 +17,7 @@ const Card = styled.article`
   margin: 2.5rem auto;
   .card--txt {
     padding: 1rem;
+    color: black;
   }
   .card--title {
     font-size: 1.5rem;

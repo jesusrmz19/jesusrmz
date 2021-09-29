@@ -2,12 +2,12 @@ import styled from 'styled-components';
 import { device } from '../../lib/breakpoints';
 
 const PostsPageStyles = styled.main`
-  background: var(--primaryColor);
+  background: var(--bgColor);
+  color: var(--FFText);
   padding-top: 1rem;
   h1,
   h2 {
     text-align: center;
-    color: var(--white);
     font-family: var(--bold);
   }
   h2 {
