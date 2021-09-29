@@ -3,7 +3,7 @@ import { device } from '../../lib/breakpoints';
 
 const FirstFold = styled.section`
   width: 100%;
-  height: 70vh;
+  height: 85vh;
   background: var(--firstFold);
   display: flex;
   align-items: center;
@@ -12,15 +12,19 @@ const FirstFold = styled.section`
   .container {
     margin-top: -30px;
     width: 85%;
-    h2 {
+    h1 {
+      text-align: center;
       font-family: var(--bold);
+      font-size: 45px;
       span {
         color: var(--secondaryColor);
       }
     }
     p {
-      margin-top: 8px;
+      text-align: center;
+      margin: 1rem 0;
       font-family: var(--regular);
+      font-size: 18px;
       span {
         color: var(--secondaryColor);
       }
@@ -28,7 +32,8 @@ const FirstFold = styled.section`
     .links {
       display: flex;
       align-items: center;
-      margin: 16px 0;
+      justify-content: center;
+      margin: 2rem 0;
       &--icons {
         font-size: 22px;
         color: var(--FFText);
@@ -38,7 +43,22 @@ const FirstFold = styled.section`
         }
       }
       a + a {
-        margin-left: 15px;
+        margin-left: 25px;
+      }
+    }
+    &--btn {
+      text-align: center;
+      a {
+        display: inline-block;
+        background: var(--btnBg);
+        padding: 0.8rem 1rem;
+        text-decoration: none;
+        color: var(--btnTxt);
+        font-family: var(--regular);
+        transition: background 0.2s ease;
+        &:hover {
+          background: var(--secondaryColor);
+        }
       }
     }
   }

@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { device } from '../../lib/breakpoints';
 
 const RecentBlogs = styled.section`
+  border-top: 3px solid var(--nav);
   padding: 2rem 1rem;
   background: var(--bgColor);
   h3 {

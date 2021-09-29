@@ -46,13 +46,11 @@ function Home({ allProjects, allExperiments, allBlogPosts, allSideProjects }) {
     <main>
       <FirstFold>
         <div className="container">
-          <h2>
-            Hola, my name is <span>Jesús</span>.
-          </h2>
+          <h1>¡Hola!</h1>
           <p>
-            I'm a self-taught web developer that uses <span>React</span>,
-            <span> JavaScript</span>, and plain <span>CSS </span>&
-            <span> HTML</span> to build cool things.
+            My name is Jesús, and I'm a self-taught web developer that uses{' '}
+            <span>React</span>,<span> JavaScript</span>, and plain{' '}
+            <span>CSS</span> &<span> HTML</span> to build cool things.
           </p>
           <div className="links">
             <a href="https://github.com/jesusrmz19" className="links--icons">
@@ -65,9 +63,9 @@ function Home({ allProjects, allExperiments, allBlogPosts, allSideProjects }) {
               <FontAwesomeIcon icon={['fab', 'twitter']} />
             </a>
           </div>
-          <Button>
+          <div className="container--btn">
             <a href="#work">EXPLORE WORK</a>
-          </Button>
+          </div>
         </div>
       </FirstFold>
       <LatestWork id="work">

@@ -25,6 +25,7 @@ const GlobalStyles = createGlobalStyle`
     --firstFold: #f3f3f3;
     --FFText: #191b1f;
     --bgColor: #f3f3f3;
+    --nav: #dadada;
     --fontColor: #191b1f;
     --secondaryColor: #ff8125;
     --btnBg: #191b1f;

@@ -11,9 +11,10 @@ const HeaderStyles = styled.header`
   align-items: center;
   flex-direction: row;
   padding: 0.5rem 1rem;
+  border-bottom: 3px solid var(--nav);
   .logo {
     text-transform: uppercase;
-    font-family: var(--light);
+    font-family: var(--bold);
     font-size: 12px;
     color: var(--FFText);
     cursor: pointer;
@@ -35,7 +36,7 @@ export default function Header() {
   return (
     <HeaderStyles>
       <Link href="/">
-        <div className="logo">LOGO</div>
+        <p className="logo">JRM</p>
       </Link>
       <div className="button--container">
         <button className="button" onClick={toggleNav}>
