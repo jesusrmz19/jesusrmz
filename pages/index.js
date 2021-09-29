@@ -50,28 +50,34 @@ function Home({ allProjects, allExperiments, allBlogPosts, allSideProjects }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="description"
-          content="Hola! I'm Jesus, and I'm a freelance web developer. I help businesses increase competitiveness by designing and developing great-looking and functional websites."
+          content="Hola! I'm Jesus, and I create websites. I help businesses increase competitiveness by designing and developing great-looking and functional websites."
         />
         <meta name="twitter:title" content="Jesus Ramirez - Web Developer" />
         <meta
           name="twitter:description"
-          content="Hola! I'm Jesus, and I'm a freelance web developer. I help businesses increase competitiveness by designing and developing great-looking and functional websites."
+          content="Hola! I'm Jesus, and I create websites. I help businesses increase competitiveness by designing and developing great-looking and functional websites."
         />
-        <meta name="twitter:image" content="" />
+        <meta
+          name="twitter:image"
+          content="https://jesusrmz.com/img/profile.png"
+        />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:url" content="https://jesusrmz.com/" />
         <meta property="og:title" content="Jesus Ramirez- Web Developer" />
         <meta
           property="og:description"
-          content="Hola! I'm Jesus, and I'm a freelance web developer. I help businesses increase competitiveness by designing and developing great-looking and functional websites."
+          content="Hola! I'm Jesus, and I create websites. I help businesses increase competitiveness by designing and developing great-looking and functional websites."
         />
-        <meta property="og:image" content="" />
+        <meta
+          property="og:image"
+          content="https://jesusrmz.com/img/profile.png"
+        />
         <meta property="og:url" content="https://jesusrmz.com/" />
         <meta
           name="description"
-          content="Hola! I'm Jesus, and I'm a freelance web developer. I help businesses increase competitiveness by designing and developing great-looking and functional websites."
+          content="Hola! I'm Jesus, and I create websites. I help businesses increase competitiveness by designing and developing great-looking and functional websites."
         />
-        {/* <link rel="icon" href="/img/logo_negro.png" /> */}
+        <link rel="icon" href="/img/favicon.png" />
         <title>Jesus Ramirez - Web Developer</title>
       </Head>
       <main>
