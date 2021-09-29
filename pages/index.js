@@ -57,10 +57,7 @@ function Home({ allProjects, allExperiments, allBlogPosts, allSideProjects }) {
           name="twitter:description"
           content="Hola! I'm Jesus, and I create websites. I help businesses increase competitiveness by designing and developing great-looking and functional websites."
         />
-        <meta
-          name="twitter:image"
-          content="https://jesusrmz.com/img/profile.png"
-        />
+        <meta name="twitter:image" content="https://jesusrmz.com/profile.png" />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:url" content="https://jesusrmz.com/" />
         <meta property="og:title" content="Jesus Ramirez- Web Developer" />
@@ -68,10 +65,7 @@ function Home({ allProjects, allExperiments, allBlogPosts, allSideProjects }) {
           property="og:description"
           content="Hola! I'm Jesus, and I create websites. I help businesses increase competitiveness by designing and developing great-looking and functional websites."
         />
-        <meta
-          property="og:image"
-          content="https://jesusrmz.com/img/profile.png"
-        />
+        <meta property="og:image" content="https://jesusrmz.com/profile.png" />
         <meta property="og:url" content="https://jesusrmz.com/" />
         <meta
           name="description"
