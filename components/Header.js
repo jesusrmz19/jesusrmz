@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 import { useNav } from '../lib/navState';
+import { device } from '../lib/breakpoints';
 import Navbar from './Navbar';
 
 const HeaderStyles = styled.header`
@@ -27,6 +28,12 @@ const HeaderStyles = styled.header`
     text-align: right;
     button {
       color: var(--FFText);
+    }
+  }
+  @media ${device.laptop} {
+    padding: 0.5rem 2rem;
+    .button--container {
+      display: none;
     }
   }
 `;

@@ -64,11 +64,22 @@ const FirstFold = styled.section`
   }
   @media ${device.laptop} {
     .container {
-      h2 {
-        font-size: 35px;
+      width: 40%;
+      h1 {
+        font-size: 65px;
       }
       p {
-        font-size: 20px;
+        font-size: 25px;
+        margin: 1.5rem 0;
+      }
+      .links {
+        margin: 2.5rem 0;
+        &--icons {
+          font-size: 35px;
+        }
+        a + a {
+          margin-left: 50px;
+        }
       }
     }
   }

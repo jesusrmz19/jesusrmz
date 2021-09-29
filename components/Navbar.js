@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useNav } from '../lib/navState';
+import { device } from '../lib/breakpoints';
 
 const NavbarStyles = styled.nav`
   width: 100%;
@@ -36,6 +37,15 @@ const NavbarStyles = styled.nav`
       text-transform: uppercase;
       font-family: var(--bold);
       font-size: 16px;
+      cursor: pointer;
+    }
+  }
+  @media ${device.laptop} {
+    width: 50%;
+    display: block;
+    .menu {
+      flex-direction: row;
+      justify-content: flex-end;
     }
   }
 `;
@@ -69,7 +79,7 @@ export default function Navbar() {
         </li>
         <li className="menu--item">Contact</li>
         <li className="menu--item btn">
-          <button onClick={() => setActiveTheme(inactiveTheme)}>🌞🌙</button>
+          <button onClick={() => setActiveTheme(inactiveTheme)}>☀️ 🌙</button>
         </li>
       </ul>
     </NavbarStyles>
