@@ -4,8 +4,9 @@ import sanityClient from '../../client';
 import BlockContent from '@sanity/block-content-to-react';
 import styled from 'styled-components';
 import { setDate } from '../../lib/helpers';
+import { device } from '../../lib/breakpoints';
 
-const SinglePostStyles = styled.div`
+const SinglePostStyles = styled.main`
   background: var(--bgColor);
   padding: 2rem 2rem;
   color: var(--fontColor);
@@ -34,6 +35,10 @@ const SinglePostStyles = styled.div`
   .post--content {
     margin-bottom: 3rem;
     width: 100%;
+    h3 {
+      font-family: var(--bold);
+      margin: 1.2rem 0 0.6rem 0;
+    }
     p {
       width: 100%;
       font-family: var(--regular);
@@ -53,26 +58,40 @@ const SinglePostStyles = styled.div`
       padding: 0.8rem;
     }
   }
+  @media ${device.laptop} {
+    padding: 3rem 2rem;
+    .post--container {
+      width: 80%;
+    }
+    .post--img {
+      text-align: center;
+      img {
+        width: 80%;
+      }
+    }
+  }
 `;
 
 export default function SinglePostPage({ data }) {
   return (
     <SinglePostStyles>
-      <h1 className="post--title">{data[0].title}</h1>
-      <p className="post--date">{setDate(data[0].date)}</p>
-      <div className="post--img">
-        <img src={data[0].mainImage.asset.url} />
-      </div>
       <div className="post--container">
-        <BlockContent
-          blocks={data[0].body}
-          projectId="nxsxkxc5"
-          dataset="production"
-          className="post--content"
-        ></BlockContent>
-      </div>
-      <div className="goBack">
-        <Link href="/posts">Back to Posts</Link>
+        <h1 className="post--title">{data[0].title}</h1>
+        <p className="post--date">{setDate(data[0].date)}</p>
+        <div className="post--img">
+          <img src={data[0].mainImage.asset.url} />
+        </div>
+        <div className="post--container">
+          <BlockContent
+            blocks={data[0].body}
+            projectId="nxsxkxc5"
+            dataset="production"
+            className="post--content"
+          ></BlockContent>
+        </div>
+        <div className="goBack">
+          <Link href="/posts">Back to Posts</Link>
+        </div>
       </div>
     </SinglePostStyles>
   );

@@ -21,6 +21,15 @@ const PostsPageStyles = styled.main`
     .container {
       flex-direction: row;
     }
+    h1 {
+      margin: 0.5 0 1.5rem 0;
+      font-size: 35px;
+    }
+    section {
+      width: 80%;
+      margin: 0 auto;
+      padding: 2rem 0;
+    }
   }
 `;
 
