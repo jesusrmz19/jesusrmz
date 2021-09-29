@@ -71,7 +71,7 @@ function Home({ allProjects, allExperiments, allBlogPosts, allSideProjects }) {
           name="description"
           content="Hola! I'm Jesus, and I create websites. I help businesses increase competitiveness by designing and developing great-looking and functional websites."
         />
-        <link rel="icon" href="/img/favicon.png" />
+        <link rel="icon" href="/favicon.png" />
         <title>Jesus Ramirez - Web Developer</title>
       </Head>
       <main>
