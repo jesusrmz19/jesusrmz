@@ -17,6 +17,7 @@ import Card from '../components/styles/Card';
 import {
   getAllBlogs,
   getExperiments,
+  getLatestsBlogs,
   getProjects,
   getSideProjects,
 } from '../lib/getFunctions';
@@ -26,19 +27,19 @@ import { useNav } from '../lib/navState';
 export async function getStaticProps() {
   const allProjects = await getProjects();
   const allExperiments = await getExperiments();
-  const allBlogPosts = await getAllBlogs();
   const allSideProjects = await getSideProjects();
+  const latestsBlogs = await getLatestsBlogs();
   return {
     props: {
+      latestsBlogs,
       allProjects,
       allExperiments,
-      allBlogPosts,
       allSideProjects,
     },
   };
 }
 
-function Home({ allProjects, allExperiments, allBlogPosts, allSideProjects }) {
+function Home({ allProjects, allExperiments, allSideProjects, latestsBlogs }) {
   const { closeNav } = useNav();
   useEffect(() => {
     closeNav();
@@ -79,8 +80,8 @@ function Home({ allProjects, allExperiments, allBlogPosts, allSideProjects }) {
           <div className="container">
             <h1>¡Hola!</h1>
             <p>
-              My name is Jesús, and I'm a self-taught web developer that uses{' '}
-              <span>React</span>,<span> JavaScript</span>, and plain{' '}
+              My name is Jesús, and I'm a self-taught web developer that uses
+              <span>React</span>,<span> JavaScript</span>, and plain
               <span>CSS</span> &<span> HTML</span> to build cool things.
             </p>
             <div className="links">
@@ -127,7 +128,7 @@ function Home({ allProjects, allExperiments, allBlogPosts, allSideProjects }) {
         <RecentBlogs>
           <h3>Recent Blogs</h3>
           <div className="blogs">
-            {allBlogPosts.map((post) => (
+            {latestsBlogs.map((post) => (
               <Link
                 href={`/posts/${post.slug.current}`}
                 key={post.slug.current}

@@ -20,6 +20,9 @@ const PostsPageStyles = styled.main`
   @media ${device.laptop} {
     .container {
       flex-direction: row;
+      flex-wrap: wrap;
+      padding: 0 2rem;
+      justify-content: space-around;
     }
     h1 {
       margin: 0.5 0 1.5rem 0;

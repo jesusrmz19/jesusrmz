@@ -35,6 +35,7 @@ const SinglePostStyles = styled.main`
   .post--content {
     margin-bottom: 3rem;
     width: 100%;
+    h2,
     h3 {
       font-family: var(--bold);
       margin: 1.2rem 0 0.6rem 0;
@@ -52,6 +53,17 @@ const SinglePostStyles = styled.main`
       font-size: 14px;
       line-height: 1.5;
       overflow: auto;
+    }
+    figure {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      img {
+        width: 85%;
+        margin: 1rem auto;
+        border-radius: 10px;
+      }
     }
   }
   .goBack {
