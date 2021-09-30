@@ -45,6 +45,14 @@ const SinglePostStyles = styled.main`
       white-space: initial;
       line-height: 2;
     }
+    pre {
+      background: black;
+      color: white;
+      padding: 1rem;
+      font-size: 14px;
+      line-height: 1.5;
+      overflow: auto;
+    }
   }
   .goBack {
     text-align: center;
@@ -72,6 +80,16 @@ const SinglePostStyles = styled.main`
   }
 `;
 
+const serializers = {
+  types: {
+    code: (props) => (
+      <pre data-language={props.node.language}>
+        <code>{props.node.code}</code>
+      </pre>
+    ),
+  },
+};
+
 export default function SinglePostPage({ data }) {
   return (
     <SinglePostStyles>
@@ -87,6 +105,7 @@ export default function SinglePostPage({ data }) {
             projectId="nxsxkxc5"
             dataset="production"
             className="post--content"
+            serializers={serializers}
           ></BlockContent>
         </div>
         <div className="goBack">

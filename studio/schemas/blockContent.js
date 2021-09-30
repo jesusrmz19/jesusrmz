@@ -62,6 +62,7 @@ export default {
       options: { hotspot: true },
     },
     {
+      title: 'Code Block',
       type: 'code',
       options: {
         theme: 'solarized_dark',

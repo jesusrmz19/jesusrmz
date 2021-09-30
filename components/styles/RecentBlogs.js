@@ -14,7 +14,7 @@ const RecentBlogs = styled.section`
     padding: 4rem 3rem;
     .blogs {
       display: flex;
-      width: 60%;
+      width: 75%;
       margin: 0 auto;
       margin-top: 1rem;
     }
