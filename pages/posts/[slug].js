@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import Head from 'next/head';
 import sanityClient from '../../client';
 import BlockContent from '@sanity/block-content-to-react';
 import styled from 'styled-components';
@@ -104,27 +105,53 @@ const serializers = {
 
 export default function SinglePostPage({ data }) {
   return (
-    <SinglePostStyles>
-      <div className="post--container">
-        <h1 className="post--title">{data[0].title}</h1>
-        <p className="post--date">{setDate(data[0].date)}</p>
-        <div className="post--img">
-          <img src={data[0].mainImage.asset.url} />
-        </div>
+    <>
+      <Head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content={data[0].description} />
+        <meta name="twitter:creator" content="@jesusrmz_" />
+        <meta name="twitter:title" content={data[0].title} />
+        <meta name="twitter:description" content={data[0].description} />
+        <meta name="twitter:image" content={data[0].mainImage.asset.url} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:url"
+          content={`https://jesusrmz.com/posts/${data[0].slug.current}}`}
+        />
+        <meta property="og:title" content={data[0].title} />
+        <meta property="og:description" content={data[0].description} />
+        <meta property="og:image" content={data[0].mainImage.asset.url} />
+        <meta
+          property="og:url"
+          content={`https://jesusrmz.com/posts/${data[0].slug.current}}`}
+        />
+        <meta name="description" content={data[0].description} />
+        <link rel="icon" href="/favicon.png" />
+        <title>{data[0].title}</title>
+      </Head>
+      <SinglePostStyles>
         <div className="post--container">
-          <BlockContent
-            blocks={data[0].body}
-            projectId="nxsxkxc5"
-            dataset="production"
-            className="post--content"
-            serializers={serializers}
-          ></BlockContent>
+          <h1 className="post--title">{data[0].title}</h1>
+          <p className="post--date">{setDate(data[0].date)}</p>
+          <div className="post--img">
+            <img src={data[0].mainImage.asset.url} />
+          </div>
+          <div className="post--container">
+            <BlockContent
+              blocks={data[0].body}
+              projectId="nxsxkxc5"
+              dataset="production"
+              className="post--content"
+              serializers={serializers}
+            ></BlockContent>
+          </div>
+          <div className="goBack">
+            <Link href="/posts">Back to Posts</Link>
+          </div>
         </div>
-        <div className="goBack">
-          <Link href="/posts">Back to Posts</Link>
-        </div>
-      </div>
-    </SinglePostStyles>
+      </SinglePostStyles>
+    </>
   );
 }
 
@@ -153,6 +180,7 @@ export async function getStaticProps({ params }) {
       title,
       slug,
       date,
+      description,
       mainImage {
           asset-> {
               _id,
