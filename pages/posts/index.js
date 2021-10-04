@@ -33,7 +33,7 @@ function PostsPage({ allBlogPosts }) {
                 <div className="card--img">
                   <img
                     src={post.mainImage.asset.url}
-                    alt={post.mainImage.alt}
+                    alt={post.altMainImage}
                   ></img>
                 </div>
                 <div className="card--txt">

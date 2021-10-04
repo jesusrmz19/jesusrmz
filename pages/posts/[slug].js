@@ -135,7 +135,7 @@ export default function SinglePostPage({ data }) {
           <h1 className="post--title">{data[0].title}</h1>
           <p className="post--date">{setDate(data[0].date)}</p>
           <div className="post--img">
-            <img src={data[0].mainImage.asset.url} />
+            <img src={data[0].mainImage.asset.url} alt={data[0].altMainImage} />
           </div>
           <div className="post--container">
             <BlockContent
@@ -187,6 +187,7 @@ export async function getStaticProps({ params }) {
               url
           }
       },
+      altMainImage,
       body,
   }`);
   return {

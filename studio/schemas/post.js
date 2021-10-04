@@ -37,6 +37,11 @@ export default {
       },
     },
     {
+      name: 'altMainImage',
+      title: 'Alternative Text for Main Image',
+      type: 'string',
+    },
+    {
       name: 'date',
       title: 'Date',
       type: 'datetime',
@@ -45,6 +50,19 @@ export default {
       name: 'body',
       title: 'Body',
       type: 'blockContent',
+    },
+    {
+      name: 'thumbnailImage',
+      title: 'Thumbnail Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    },
+    {
+      name: 'altThumbnail',
+      title: 'Alternative Text for Thumbnail',
+      type: 'string',
     },
   ],
 
