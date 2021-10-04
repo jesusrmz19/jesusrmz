@@ -53,7 +53,7 @@ function Home({ allProjects, allExperiments, allSideProjects, latestsBlogs }) {
           name="description"
           content="Web Developer and Designer, based in Guadalajara, Mexico. I help businesses increase competitiveness by designing and developing great-looking and functional websites."
         />
-        <meta name="twitter:title" content="Jesus Ramirez" />
+        <meta name="twitter:title" content="Jesus Ramirez | Web Developer" />
         <meta
           name="twitter:description"
           content="Web Developer and Designer, based in Guadalajara, Mexico. I help businesses increase competitiveness by designing and developing great-looking and functional websites."
@@ -61,7 +61,7 @@ function Home({ allProjects, allExperiments, allSideProjects, latestsBlogs }) {
         <meta name="twitter:image" content="https://jesusrmz.com/profile.png" />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:url" content="https://jesusrmz.com/" />
-        <meta property="og:title" content="Jesus Ramirez" />
+        <meta property="og:title" content="Jesus Ramirez | Web Developer" />
         <meta
           property="og:description"
           content="Web Developer and Designer, based in Guadalajara, Mexico. I help businesses increase competitiveness by designing and developing great-looking and functional websites."
@@ -73,7 +73,7 @@ function Home({ allProjects, allExperiments, allSideProjects, latestsBlogs }) {
           content="Web Developer and Designer, based in Guadalajara, Mexico. I help businesses increase competitiveness by designing and developing great-looking and functional websites."
         />
         <link rel="icon" href="/favicon.png" />
-        <title>Jesus Ramirez - Web Developer</title>
+        <title>Jesus Ramirez | Web Developer</title>
       </Head>
       <main>
         <FirstFold>
@@ -81,8 +81,8 @@ function Home({ allProjects, allExperiments, allSideProjects, latestsBlogs }) {
             <h1>¡Hola!</h1>
             <p>
               My name is Jesús, and I'm a self-taught web developer that uses
-              <span>React</span>,<span> JavaScript</span>, and plain
-              <span>CSS</span> &<span> HTML</span> to build cool things.
+              <span> React</span>,<span> JavaScript</span>, and plain
+              <span> CSS</span> &<span> HTML</span> to build cool things.
             </p>
             <div className="links">
               <a href="https://github.com/jesusrmz19" className="links--icons">
