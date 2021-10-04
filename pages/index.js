@@ -51,26 +51,26 @@ function Home({ allProjects, allExperiments, allSideProjects, latestsBlogs }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="description"
-          content="Hola! I create websites. I help businesses increase competitiveness by designing and developing great-looking and functional websites."
+          content="Web Developer and Designer, based in Guadalajara, Mexico. I help businesses increase competitiveness by designing and developing great-looking and functional websites."
         />
         <meta name="twitter:title" content="Jesus Ramirez" />
         <meta
           name="twitter:description"
-          content="Web Developer and Designer. I help businesses increase competitiveness by designing and developing great-looking and functional websites."
+          content="Web Developer and Designer, based in Guadalajara, Mexico. I help businesses increase competitiveness by designing and developing great-looking and functional websites."
         />
-        <meta name="twitter:image" content="https://jesusrmz.com/favicon.png" />
+        <meta name="twitter:image" content="https://jesusrmz.com/profile.png" />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:url" content="https://jesusrmz.com/" />
         <meta property="og:title" content="Jesus Ramirez" />
         <meta
           property="og:description"
-          content="Web Developer and Designer. I help businesses increase competitiveness by designing and developing great-looking and functional websites."
+          content="Web Developer and Designer, based in Guadalajara, Mexico. I help businesses increase competitiveness by designing and developing great-looking and functional websites."
         />
-        <meta property="og:image" content="https://jesusrmz.com/favicon.png" />
+        <meta property="og:image" content="https://jesusrmz.com/profile.png" />
         <meta property="og:url" content="https://jesusrmz.com/" />
         <meta
           name="description"
-          content="Web Developer and Designer. I help businesses increase competitiveness by designing and developing great-looking and functional websites."
+          content="Web Developer and Designer, based in Guadalajara, Mexico. I help businesses increase competitiveness by designing and developing great-looking and functional websites."
         />
         <link rel="icon" href="/favicon.png" />
         <title>Jesus Ramirez - Web Developer</title>
