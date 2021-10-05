@@ -36,6 +36,7 @@ export async function getStaticProps() {
       allExperiments,
       allSideProjects,
     },
+    revalidate: 5,
   };
 }
 

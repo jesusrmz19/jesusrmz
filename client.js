@@ -6,5 +6,6 @@ import sanityClient from '@sanity/client';
 export default sanityClient({
   projectId: 'nxsxkxc5',
   dataset: 'production',
+  apiVersion: '2021-10-05',
   useCdn: true, // `false` if you want to ensure fresh data
 });
