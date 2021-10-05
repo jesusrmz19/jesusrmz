@@ -9,7 +9,6 @@ import { useNav } from '../../lib/navState';
 
 export async function getStaticProps() {
   const allBlogPosts = await getAllBlogs();
-  console.log(allBlogPosts);
   return {
     props: {
       allBlogPosts,

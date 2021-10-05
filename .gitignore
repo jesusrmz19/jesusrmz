@@ -5,3 +5,5 @@ template.md
 
 .env
 .env.local
+
+dist
