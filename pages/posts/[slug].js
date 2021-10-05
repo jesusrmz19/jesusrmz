@@ -113,7 +113,14 @@ export default function SinglePostPage({ data }) {
         <meta name="twitter:creator" content="@jesusrmz_" />
         <meta name="twitter:title" content={data[0].title} />
         <meta name="twitter:description" content={data[0].description} />
-        <meta name="twitter:image" content={data[0].mainImage.asset.url} />
+        <meta
+          name="twitter:image"
+          content={
+            data[0].thumbnailImage?.asset?.url
+              ? data[0].thumbnailImage.asset.url
+              : data[0].mainImage.asset.url
+          }
+        />
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:url"
@@ -188,6 +195,13 @@ export async function getStaticProps({ params }) {
           }
       },
       altMainImage,
+      thumbnailImage {
+        asset -> {
+          _id,
+          url
+        }
+      },
+      altThumbnail,
       body,
   }`);
   return {
