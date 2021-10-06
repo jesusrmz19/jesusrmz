@@ -96,7 +96,8 @@ const SinglePostStyles = styled.main`
     .post--img {
       text-align: center;
       img {
-        width: 80%;
+        height: 500px;
+        object-fit: contain;
       }
     }
   }
