@@ -7,3 +7,4 @@ template.md
 .env.local
 
 dist
+src

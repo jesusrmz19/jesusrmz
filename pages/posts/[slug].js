@@ -36,6 +36,15 @@ const SinglePostStyles = styled.main`
   .post--content {
     margin-bottom: 3rem;
     width: 100%;
+    ul {
+      list-style-type: square;
+
+      font-family: var(--regular);
+      line-height: 2;
+      margin-top: 1em;
+      margin-bottom: 1em;
+      padding-left: 40px;
+    }
     h2,
     h3 {
       font-family: var(--bold);
