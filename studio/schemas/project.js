@@ -37,6 +37,11 @@ export default {
       },
     },
     {
+      name: 'altImage',
+      title: 'Alt Text for Image',
+      type: 'string',
+    },
+    {
       title: 'Project Technologies',
       name: 'projectTechnologies',
       type: 'array',

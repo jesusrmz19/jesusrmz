@@ -103,8 +103,8 @@ export default function Footer() {
       <div className="footer--menu">
         <p className="footer--title">Menu</p>
         <a className="footer--txt">Work</a>
-        <a className="footer--txt">Experiments</a>
         <Link href="/posts/">Blog</Link>
+        <a className="footer--txt">Side Projects</a>
       </div>
       <div className="footer--contact">
         <p className="footer--title">Contact</p>

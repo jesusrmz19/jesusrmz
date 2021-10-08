@@ -102,7 +102,7 @@ function Home({ allProjects, allExperiments, allSideProjects, latestsBlogs }) {
           </div>
         </FirstFold>
         <LatestWork id="work">
-          <h3>Latest Work</h3>
+          <h2>Latest Work</h2>
           <div className="work">
             {allProjects.map((project) => (
               <Project key={project.title} details={project} />
@@ -110,7 +110,7 @@ function Home({ allProjects, allExperiments, allSideProjects, latestsBlogs }) {
           </div>
         </LatestWork>
         <ExperimentsSection>
-          <h3>Experiments</h3>
+          <h2>Experiments</h2>
           <div className="experiments">
             {allExperiments.map((experiment) => (
               <Experiment
@@ -121,13 +121,13 @@ function Home({ allProjects, allExperiments, allSideProjects, latestsBlogs }) {
           </div>
         </ExperimentsSection>
         <LatestWork>
-          <h3>Last Side Projects</h3>
+          <h2>Last Side Project</h2>
           <div className="work">
             <Project details={allSideProjects[0]}></Project>
           </div>
         </LatestWork>
         <RecentBlogs>
-          <h3>Recent Blogs</h3>
+          <h2>Recent Blogs</h2>
           <div className="blogs">
             {latestsBlogs.map((post) => (
               <Link

@@ -77,6 +77,15 @@ export default function Navbar() {
         >
           <Link href="/posts/">Blog</Link>
         </li>
+        <li
+          className={
+            router.pathname === '/side-projects'
+              ? 'menu--item active'
+              : 'menu--item'
+          }
+        >
+          <Link href="/side-projects">Side Projects</Link>
+        </li>
         <li className="menu--item">Contact</li>
         <li className="menu--item btn">
           <button onClick={() => setActiveTheme(inactiveTheme)}>☀️ 🌙</button>

@@ -6,13 +6,13 @@ const LatestWork = styled.section`
   width: 100%;
   padding: 2rem 1rem 2rem 1rem;
   color: var(--fontColor);
-  h3 {
+  h2 {
     font-family: var(--bold);
     text-align: center;
   }
   @media ${device.laptop} {
     padding: 5rem 3rem;
-    h3 {
+    h2 {
       font-size: 28px;
     }
   }

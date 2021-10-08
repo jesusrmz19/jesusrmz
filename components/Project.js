@@ -110,15 +110,22 @@ const RepoButton = styled.a`
 `;
 
 export default function Project({ details }) {
-  const { title, description, link, repo, mainImage, projectTechnologies } =
-    details;
+  const {
+    title,
+    description,
+    link,
+    repo,
+    mainImage,
+    projectTechnologies,
+    altImage,
+  } = details;
   return (
     <ProjectStyles>
       <div className="project--img">
-        <img src={mainImage.asset.url} alt="alt"></img>
+        <img src={mainImage.asset.url} alt={altImage}></img>
       </div>
       <div className="project--txt">
-        <p className="project--name">{title}</p>
+        <h3 className="project--name">{title}</h3>
         <p className="project--description">{description}</p>
       </div>
       <div className="project--tech">
