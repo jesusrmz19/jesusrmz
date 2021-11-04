@@ -22,7 +22,11 @@ const GlobalStyles = createGlobalStyle`
   }
   body,
   body[data-theme="light"]{
-    --firstFold: #f3f3f3;
+    --ffbg: #f5f5f5;
+    --footerbg: #f5f5f5;
+    --blacktxt: #222222;
+    --greytxt: #aaaaaa;
+    --mainbg: #ffffff;
     --FFText: #191b1f;
     --bgColor: #f3f3f3;
     --nav: #dadada;

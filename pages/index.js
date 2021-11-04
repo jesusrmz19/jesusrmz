@@ -1,50 +1,12 @@
-import { useState, useEffect } from 'react';
-import Button from '../components/styles/Button';
-import Link from 'next/link';
-import Head from 'next/head';
-import FirstFold from '../components/styles/FirstFold';
-import LatestWork from '../components/styles/LatestWork';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import projects from '../content/projects.json';
+import Head from 'next/head';
+import Link from 'next/link';
 import Project from '../components/Project';
-import ExperimentsSection from '../components/styles/ExperimentsSection';
-import experiments from '../content/experiments.json';
-import Experiment from '../components/Experiment';
-import sideprojects from '../content/sideprojects.json';
-import ContactStyles from '../components/styles/ContactStyles';
-import RecentBlogs from '../components/styles/RecentBlogs';
-import Card from '../components/styles/Card';
-import {
-  getAllBlogs,
-  getExperiments,
-  getLatestsBlogs,
-  getProjects,
-  getSideProjects,
-} from '../lib/getFunctions';
-import { setDate } from '../lib/helpers';
-import { useNav } from '../lib/navState';
+import HeroSection from '../components/styles/HeroSection';
+import HomeProjectSection from '../components/styles/HomeProjectSection';
 
-export async function getStaticProps() {
-  const allProjects = await getProjects();
-  const allExperiments = await getExperiments();
-  const allSideProjects = await getSideProjects();
-  const latestsBlogs = await getLatestsBlogs();
-  return {
-    props: {
-      latestsBlogs,
-      allProjects,
-      allExperiments,
-      allSideProjects,
-    },
-    revalidate: 5,
-  };
-}
-
-function Home({ allProjects, allExperiments, allSideProjects, latestsBlogs }) {
-  const { closeNav } = useNav();
-  useEffect(() => {
-    closeNav();
-  }, []);
+function Home() {
   return (
     <>
       <Head>
@@ -77,80 +39,34 @@ function Home({ allProjects, allExperiments, allSideProjects, latestsBlogs }) {
         <title>Jesus Ramirez | Web Developer</title>
       </Head>
       <main>
-        <FirstFold>
-          <div className="container">
-            <h1>¡Hola!</h1>
-            <p>
-              My name is Jesús, and I'm a self-taught web developer that uses
-              <span> React</span>,<span> JavaScript</span>, and plain
-              <span> CSS</span> &<span> HTML</span> to build cool things.
-            </p>
-            <div className="links">
-              <a href="https://github.com/jesusrmz19" className="links--icons">
-                <FontAwesomeIcon icon={['fab', 'github']} />
-              </a>
-              <a href="https://codepen.io/jesusrmz" className="links--icons">
-                <FontAwesomeIcon icon={['fab', 'codepen']} />
-              </a>
-              <a href="https://twitter.com/jesusrmz_" className="links--icons">
-                <FontAwesomeIcon icon={['fab', 'twitter']} />
-              </a>
-            </div>
-            <div className="container--btn">
-              <a href="#work">EXPLORE WORK</a>
+        <HeroSection>
+          <div className="hero__container">
+            <div className="hero__text">
+              <p>¡hola!</p>
+              <h1>
+                <span>My name is Jesús Ramírez.</span>
+                <span>I'm a freelance web developer.</span>
+              </h1>
+              <div className="hero__text_links">
+                <a href="#" className="hero__text_git">
+                  <FontAwesomeIcon icon={faGithub}></FontAwesomeIcon>
+                </a>
+                <div className="hero__text_pages">
+                  <Link href="#">about me</Link>
+                  <Link href="#">read my blog</Link>
+                </div>
+              </div>
             </div>
           </div>
-        </FirstFold>
-        <LatestWork id="work">
-          <h2>Latest Work</h2>
-          <div className="work">
-            {allProjects.map((project) => (
-              <Project key={project.title} details={project} />
-            ))}
+        </HeroSection>
+        <HomeProjectSection>
+          <div className="projects__container">
+            <h2>projects</h2>
+            <div className="projects">
+              <Project></Project>
+            </div>
           </div>
-        </LatestWork>
-        <ExperimentsSection>
-          <h2>Experiments</h2>
-          <div className="experiments">
-            {allExperiments.map((experiment) => (
-              <Experiment
-                key={experiment.title}
-                details={experiment}
-              ></Experiment>
-            ))}
-          </div>
-        </ExperimentsSection>
-        <LatestWork>
-          <h2>Last Side Project</h2>
-          <div className="work">
-            <Project details={allSideProjects[0]}></Project>
-          </div>
-        </LatestWork>
-        <RecentBlogs>
-          <h2>Recent Blogs</h2>
-          <div className="blogs">
-            {latestsBlogs.map((post) => (
-              <Link
-                href={`/posts/${post.slug.current}`}
-                key={post.slug.current}
-              >
-                <Card className="card">
-                  <div className="card--img">
-                    <img
-                      src={post.mainImage.asset.url}
-                      alt={post.altMainImage}
-                    ></img>
-                  </div>
-                  <div className="card--txt">
-                    <h4 className="card--title">{post.title}</h4>
-                    <p className="card--description">{post.description}</p>
-                    <p className="card--date">{setDate(post.date)}</p>
-                  </div>
-                </Card>
-              </Link>
-            ))}
-          </div>
-        </RecentBlogs>
+        </HomeProjectSection>
       </main>
     </>
   );

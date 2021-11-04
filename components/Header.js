@@ -43,14 +43,14 @@ export default function Header() {
   return (
     <HeaderStyles>
       <Link href="/">
-        <p className="logo">JRM</p>
+        <p className="logo">👋🏼 JRM</p>
       </Link>
-      <div className="button--container">
+      {/* <div className="button--container">
         <button className="button" onClick={toggleNav}>
           menu
         </button>
       </div>
-      <Navbar></Navbar>
+      <Navbar></Navbar> */}
     </HeaderStyles>
   );
 }
