@@ -11,7 +11,6 @@ const ProjectStyles = styled.div`
   color: #fff;
   padding: 25px;
   border-radius: 5px;
-  margin-bottom: 40px;
   .title {
     h3 {
       font-size: 25px;

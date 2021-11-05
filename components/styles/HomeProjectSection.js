@@ -18,11 +18,17 @@ const HomeProjectSection = styled.section`
       text-transform: uppercase;
       margin-bottom: 50px;
     }
-    a {
-      text-decoration: none;
-      transition: all ease 0.2s;
-      &:hover {
-        transform: scale(0.9);
+    .projects {
+      a {
+        display: block;
+        text-decoration: none;
+        transition: all ease 0.2s;
+        &:hover {
+          transform: scale(0.98);
+        }
+      }
+      a + a {
+        margin-top: 40px;
       }
     }
   }
