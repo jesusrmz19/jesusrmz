@@ -5,8 +5,19 @@ import Link from 'next/link';
 import Project from '../components/Project';
 import HeroSection from '../components/styles/HeroSection';
 import HomeProjectSection from '../components/styles/HomeProjectSection';
+import { getProjects } from '../lib/getFunctions';
 
-function Home() {
+export async function getStaticProps() {
+  const allProjects = await getProjects();
+  return {
+    props: {
+      allProjects,
+    },
+    revalidate: 60,
+  };
+}
+
+function Home({ allProjects }) {
   return (
     <>
       <Head>
@@ -64,6 +75,9 @@ function Home() {
           <div className="projects__container">
             <h2>projects</h2>
             <div className="projects">
+              {allProjects.map((project) => {
+                <p>{project.title}</p>;
+              })}
               <Project></Project>
             </div>
           </div>
