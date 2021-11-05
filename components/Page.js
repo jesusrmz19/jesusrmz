@@ -29,7 +29,7 @@ const GlobalStyles = createGlobalStyle`
     --mainbg: #ffffff;
     --FFText: #191b1f;
     --bgColor: #f3f3f3;
-    --nav: #dadada;
+    --nav: #ffff;
   }
   body[data-theme="dark"]{
     --firstFold: #191B1F;
