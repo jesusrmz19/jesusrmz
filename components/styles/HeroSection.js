@@ -22,6 +22,9 @@ const HeroSection = styled.section`
   }
   .hero__text {
     padding: 120px 0;
+    @media ${device.laptop} {
+      padding: 180px 0;
+    }
     p {
       font-size: 14px;
       color: var(--greytxt);
