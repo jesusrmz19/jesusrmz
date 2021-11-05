@@ -61,26 +61,4 @@ function PostsPage({ allBlogPosts }) {
   );
 }
 
-{
-  /* <div className="container">
-{allBlogPosts.map((post) => (
-  <Link href={`/posts/${post.slug.current}`} key={post.slug.current}>
-    <Card className="card">
-      <div className="card--img">
-        <img
-          src={post.mainImage.asset.url}
-          alt={post.altMainImage}
-        ></img>
-      </div>
-      <div className="card--txt">
-        <h4 className="card--title">{post.title}</h4>
-        <p className="card--description">{post.description}</p>
-        <p className="card--date">{setDate(post.date)}</p>
-      </div>
-    </Card>
-  </Link>
-))}
-</div> */
-}
-
 export default PostsPage;
