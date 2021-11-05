@@ -95,6 +95,9 @@ const FooterStyles = styled.footer`
       li {
         cursor: pointer;
         transition: all ease 0.2s;
+        a {
+          color: inherit;
+        }
         &:hover {
           color: var(--blacktxt);
           transform: translateY(-5px);
@@ -127,22 +130,22 @@ export default function Footer() {
           </a>
           <ul className="footer--right__links">
             <li>
-              <a>
+              <a href="https://github.com/jesusrmz19">
                 <FontAwesomeIcon icon={faGithub}></FontAwesomeIcon>
               </a>
             </li>
             <li>
-              <a>
+              <a href="https://www.linkedin.com/in/jesusrmz/">
                 <FontAwesomeIcon icon={faLinkedin}></FontAwesomeIcon>
               </a>
             </li>
             <li>
-              <a>
+              <a href="https://twitter.com/jesusrmz_">
                 <FontAwesomeIcon icon={faTwitter}></FontAwesomeIcon>
               </a>
             </li>
             <li>
-              <a>
+              <a href="https://codepen.io/jesusrmz">
                 <FontAwesomeIcon icon={faCodepen}></FontAwesomeIcon>
               </a>
             </li>
