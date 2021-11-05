@@ -66,6 +66,11 @@ export default {
       type: 'boolean',
     },
     {
+      name: 'homepage',
+      title: 'Show in the home page?',
+      type: 'boolean',
+    },
+    {
       name: 'altImage',
       title: 'Alt Text for Image',
       type: 'string',

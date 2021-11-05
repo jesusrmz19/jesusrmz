@@ -6,10 +6,10 @@ import Link from 'next/link';
 import Project from '../components/Project';
 import HeroSection from '../components/styles/HeroSection';
 import HomeProjectSection from '../components/styles/HomeProjectSection';
-import { getProjects } from '../lib/getFunctions';
+import { getHomePageProjects } from '../lib/getFunctions';
 
 export async function getStaticProps() {
-  const allProjects = await getProjects();
+  const allProjects = await getHomePageProjects();
   return {
     props: {
       allProjects,
