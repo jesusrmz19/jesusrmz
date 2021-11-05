@@ -24,6 +24,11 @@ export default {
       type: 'datetime',
     },
     {
+      name: 'bgcolor',
+      title: 'Background Color',
+      type: 'string',
+    },
+    {
       name: 'link',
       title: 'Live Link',
       type: 'url',
