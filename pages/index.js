@@ -35,7 +35,8 @@ function Home() {
           name="description"
           content="Web Developer and Designer, based in Guadalajara, Mexico. I help businesses increase competitiveness by designing and developing great-looking and functional websites."
         />
-        <link rel="icon" href="/favicon.png" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png"></link>
         <title>Jesus Ramirez | Web Developer</title>
       </Head>
       <main>

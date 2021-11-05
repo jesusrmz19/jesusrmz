@@ -9,13 +9,18 @@ export default {
       type: 'string',
     },
     {
+      name: 'industry',
+      title: 'Industry',
+      type: 'string',
+    },
+    {
       name: 'description',
       title: 'Description',
       type: 'text',
     },
     {
       name: 'date',
-      title: 'Date',
+      title: 'Date Finished',
       type: 'datetime',
     },
     {
@@ -35,6 +40,16 @@ export default {
       options: {
         hotspot: true,
       },
+    },
+    {
+      name: 'designed',
+      title: 'Designed?',
+      type: 'boolean',
+    },
+    {
+      name: 'developed',
+      title: 'Developed?',
+      type: 'boolean',
     },
     {
       name: 'altImage',
