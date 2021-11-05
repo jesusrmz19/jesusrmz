@@ -14,30 +14,40 @@ const NavbarStyles = styled.nav`
     flex-direction: column;
     align-items: center;
     &--item {
-      color: var(--FFText);
-      text-transform: uppercase;
+      color: var(--blacktxt);
       font-family: var(--bold);
       letter-spacing: 1.2px;
       padding: 0.8em;
       a {
-        text-transform: uppercase;
         text-decoration: none;
-        color: var(--FFText);
+        color: var(--greytxt);
+        transition: color ease 0.2s;
+        &:hover {
+          color: var(--blacktxt);
+        }
       }
     }
   }
   .menu--item.active {
     a {
-      color: var(--secondaryColor);
+      color: var(--blacktxt);
     }
   }
   .menu--item {
     button {
       color: var(--white);
-      text-transform: uppercase;
       font-family: var(--bold);
       font-size: 16px;
       cursor: pointer;
+    }
+  }
+  .menu--item.contact {
+    a {
+      color: var(--greytxt);
+      transition: color ease 0.2s;
+      &:hover {
+        color: var(--blacktxt);
+      }
     }
   }
   @media ${device.laptop} {
@@ -77,19 +87,14 @@ export default function Navbar() {
         >
           <Link href="/posts/">Blog</Link>
         </li>
-        <li
-          className={
-            router.pathname === '/side-projects'
-              ? 'menu--item active'
-              : 'menu--item'
-          }
-        >
-          <Link href="/side-projects">Side Projects</Link>
+        <li className="menu--item contact">
+          <a href="#contact" onClick={closeNav}>
+            Contact
+          </a>
         </li>
-        <li className="menu--item">Contact</li>
-        <li className="menu--item btn">
+        {/* <li className="menu--item btn">
           <button onClick={() => setActiveTheme(inactiveTheme)}>☀️ 🌙</button>
-        </li>
+        </li> */}
       </ul>
     </NavbarStyles>
   );

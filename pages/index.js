@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Head from 'next/head';
@@ -7,6 +7,7 @@ import Project from '../components/Project';
 import HeroSection from '../components/styles/HeroSection';
 import HomeProjectSection from '../components/styles/HomeProjectSection';
 import { getHomePageProjects } from '../lib/getFunctions';
+import { useNav } from '../lib/navState';
 
 export async function getStaticProps() {
   const allProjects = await getHomePageProjects();
@@ -27,6 +28,10 @@ const ProjectItem = React.forwardRef(({ onClick, href, props }, ref) => {
 });
 
 function Home({ allProjects }) {
+  const { closeNav } = useNav();
+  useEffect(() => {
+    closeNav();
+  }, []);
   return (
     <>
       <Head>

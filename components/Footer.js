@@ -110,7 +110,7 @@ const FooterStyles = styled.footer`
 export default function Footer() {
   return (
     <FooterStyles>
-      <div className="footer--container">
+      <div className="footer--container" id="contact">
         <div className="footer--left">
           <p className="footer--left__big">
             <span>Don't be shy,</span>

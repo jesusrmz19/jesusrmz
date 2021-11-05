@@ -30,10 +30,6 @@ const GlobalStyles = createGlobalStyle`
     --FFText: #191b1f;
     --bgColor: #f3f3f3;
     --nav: #dadada;
-    --fontColor: #191b1f;
-    --secondaryColor: #ff8125;
-    --btnBg: #191b1f;
-    --btnTxt: #f3f3f3;
   }
   body[data-theme="dark"]{
     --firstFold: #191B1F;
