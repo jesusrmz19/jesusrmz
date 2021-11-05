@@ -38,6 +38,44 @@ const ProjectStyles = styled.div`
       width: 100%;
     }
   }
+  @media ${device.laptop} {
+    width: 100%;
+    max-width: 600px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-row: auto auto;
+    grid-row-gap: 60px;
+    padding: 60px 50px;
+    align-items: center;
+    .title {
+      grid-column: 1/2;
+      grid-row: 1;
+      h3 {
+        font-size: 30px;
+      }
+    }
+    .subtxt {
+      grid-column: 2/-1;
+      grid-row: 1;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      text-align: right;
+    }
+    .img {
+      grid-column: 1/-1;
+      grid-row: 2;
+      text-align: center;
+      img {
+        width: 80%;
+      }
+    }
+  }
+  @media ${device.laptopM} {
+    width: 600px;
+    max-width: 600px;
+    height: 610px;
+    max-height: 610px;
+  }
 `;
 
 export default function Project({ project }) {
