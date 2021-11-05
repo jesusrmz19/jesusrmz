@@ -1,15 +1,17 @@
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { device } from '../lib/breakpoints';
+import project from '../studio/schemas/project';
 
 const ProjectStyles = styled.div`
   max-width: 327px;
   max-height: 420px;
   overflow: hidden;
-  background: #333232;
+  background: ${(props) => props.color};
   color: #fff;
   padding: 25px;
   border-radius: 5px;
+  margin-bottom: 40px;
   .title {
     h3 {
       font-size: 25px;
@@ -39,18 +41,20 @@ const ProjectStyles = styled.div`
   }
 `;
 
-export default function Project() {
+export default function Project({ project }) {
   return (
-    <ProjectStyles>
+    <ProjectStyles color={project.bgcolor}>
       <div className="title">
-        <h3>La Silicia</h3>
+        <h3>{project.title}</h3>
       </div>
       <div className="subtxt">
-        <p className="subtxt__dnd">design & depeloment</p>
-        <p className="subtxt__description">Product Showcase</p>
+        <p className="subtxt__dnd">
+          {project.designed ? 'design & development' : 'development'}
+        </p>
+        <p className="subtxt__description">{project.industry}</p>
       </div>
       <div className="img">
-        <img src="/lasilicia.png" alt="La Silicia"></img>
+        <img src={project.mainImage.asset.url} alt="La Silicia"></img>
       </div>
     </ProjectStyles>
   );

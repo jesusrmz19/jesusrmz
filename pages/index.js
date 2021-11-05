@@ -1,3 +1,4 @@
+import React from 'react';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Head from 'next/head';
@@ -13,9 +14,17 @@ export async function getStaticProps() {
     props: {
       allProjects,
     },
-    revalidate: 60,
+    revalidate: 5,
   };
 }
+
+const ProjectItem = React.forwardRef(({ onClick, href, props }, ref) => {
+  return (
+    <a href={href} onClick={onClick} ref={ref}>
+      <Project project={props}></Project>
+    </a>
+  );
+});
 
 function Home({ allProjects }) {
   return (
@@ -75,10 +84,15 @@ function Home({ allProjects }) {
           <div className="projects__container">
             <h2>projects</h2>
             <div className="projects">
-              {allProjects.map((project) => {
-                <p>{project.title}</p>;
-              })}
-              <Project></Project>
+              {allProjects.map((project) => (
+                <Link
+                  key={project.slug.current}
+                  href={project.link}
+                  passHref={true}
+                >
+                  <ProjectItem props={project}></ProjectItem>
+                </Link>
+              ))}
             </div>
           </div>
         </HomeProjectSection>

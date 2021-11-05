@@ -18,6 +18,13 @@ const HomeProjectSection = styled.section`
       text-transform: uppercase;
       margin-bottom: 50px;
     }
+    a {
+      text-decoration: none;
+      transition: all ease 0.2s;
+      &:hover {
+        transform: scale(0.9);
+      }
+    }
   }
 `;
 
