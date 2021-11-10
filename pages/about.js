@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import Head from 'next/head';
 import styled from 'styled-components';
 import { useNav } from '../lib/navState';
 import { device } from '../lib/breakpoints';
@@ -196,102 +197,136 @@ export default function About() {
     closeNav();
   }, []);
   return (
-    <AboutPageStyles>
-      <section className="hero">
-        <div className="hero__container">
-          <div className="hero__text">
-            <h1>about</h1>
-            <p>
-              <span>Learn more about me, </span>
-              <span>and the technologies I use </span>
-              <span>to design and develop.</span>
-            </p>
-          </div>
-        </div>
-      </section>
-      <section className="content">
-        <div className="content__container">
-          <div className="me">
-            <div className="me__txt">
-              <h2>About me.</h2>
+    <>
+      <Head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+          name="description"
+          content="Web Developer and Designer, based in Guadalajara, Mexico. I help businesses increase competitiveness by designing and developing great-looking and functional websites."
+        />
+        <meta name="twitter:title" content="Jesus Ramirez | About Me" />
+        <meta
+          name="twitter:description"
+          content="Web Developer and Designer, based in Guadalajara, Mexico. I help businesses increase competitiveness by designing and developing great-looking and functional websites."
+        />
+        <meta name="twitter:image" content="https://jesusrmz.com/profile.png" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:url" content="https://jesusrmz.com/about" />
+        <meta property="og:title" content="Jesus Ramirez | About Me" />
+        <meta
+          property="og:description"
+          content="Web Developer and Designer, based in Guadalajara, Mexico. I help businesses increase competitiveness by designing and developing great-looking and functional websites."
+        />
+        <meta property="og:image" content="https://jesusrmz.com/profile.png" />
+        <meta property="og:url" content="https://jesusrmz.com/" />
+        <meta
+          name="description"
+          content="Web Developer and Designer, based in Guadalajara, Mexico. I help businesses increase competitiveness by designing and developing great-looking and functional websites."
+        />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png"></link>
+        <title>Jesus Ramirez | About Me</title>
+      </Head>
+      <AboutPageStyles>
+        <section className="hero">
+          <div className="hero__container">
+            <div className="hero__text">
+              <h1>about</h1>
               <p>
-                Hola, I'm Jesús. I'm a Guadalajara-based freelance web designer
-                and developer. You probably don't know me but my dogs know me as
-                the person who walks and feeds them every morning.
-              </p>
-              <p>
-                I'm 31 years old, I'm married to a beautiful mexican wife and
-                live with two lovely dogs named Dana and Lulu.
+                <span>Learn more about me, </span>
+                <span>and the technologies I use </span>
+                <span>to design and develop.</span>
               </p>
             </div>
-            <div className="me__img">PICTURE COMMING SOON</div>
           </div>
-          <div className="work">
-            <h2>Work, Education, and Stuff</h2>
-            <p>
-              I have a degree in Electronic Engineering, and a Master in
-              Business from ITESO University, I also have a full-time job as a
-              Field Applications Engineer focused in the Automotive Industry.
-              I've been working for the same company, called Ammon & Rizos, for
-              almost 10 years but we focus mostly (99.9%) in hardware design,
-              logistics, and manufacturing.
-            </p>
-            <p>
-              I first started programming back in college but picked it up again
-              in the summer of 2017. I looked for something in the software
-              world that my 9-to-5 couldn’t give me and I’m gladly I found it in
-              this fast-growing and excentric web development world. I like to
-              create, learn, explore all of the things related to web
-              development, it’s been a lifesaver.
-            </p>
-            <p>
-              When I’m not working, learning something new, writing code or
-              walking my dogs I spend my time hanging out with my wife, talking,
-              playing board games, taking photographs, reading or playing
-              basketball. I’m a huge NBA fan, I could watch basketball all day,
-              everyday. I’ve also been reading more, this year I’m up to 12
-              books, and I know there’s people out there that reads 50 every
-              year but I’ve never read that amount in a single year and I’m
-              happy for that achivment.
-            </p>
-            {/* <p>
+        </section>
+        <section className="content">
+          <div className="content__container">
+            <div className="me">
+              <div className="me__txt">
+                <h2>About me.</h2>
+                <p>
+                  Hola, I'm Jesús. I'm a Guadalajara-based freelance web
+                  designer and developer. You probably don't know me but my dogs
+                  know me as the person who walks and feeds them every morning.
+                </p>
+                <p>
+                  I'm 31 years old, I'm married to a beautiful mexican wife and
+                  live with two lovely dogs named Dana and Lulu.
+                </p>
+              </div>
+              <div className="me__img">PICTURE COMMING SOON</div>
+            </div>
+            <div className="work">
+              <h2>Work, Education, and Stuff</h2>
+              <p>
+                I have a degree in Electronic Engineering, and a Master in
+                Business from ITESO University, I also have a full-time job as a
+                Field Applications Engineer focused in the Automotive Industry.
+                I've been working for the same company, called Ammon & Rizos,
+                for almost 10 years but we focus mostly (99.9%) in hardware
+                design, logistics, and manufacturing.
+              </p>
+              <p>
+                I first started programming back in college but picked it up
+                again in the summer of 2017. I looked for something in the
+                software world that my 9-to-5 couldn’t give me and I’m gladly I
+                found it in this fast-growing and excentric web development
+                world. I like to create, learn, explore all of the things
+                related to web development, it’s been a lifesaver.
+              </p>
+              <p>
+                When I’m not working, learning something new, writing code or
+                walking my dogs I spend my time hanging out with my wife,
+                talking, playing board games, taking photographs, reading or
+                playing basketball. I’m a huge NBA fan, I could watch basketball
+                all day, everyday. I’ve also been reading more, this year I’m up
+                to 12 books, and I know there’s people out there that reads 50
+                every year but I’ve never read that amount in a single year and
+                I’m happy for that achivment.
+              </p>
+              {/* <p>
               You can actually see the books I’ve read here, as I’ve developed a
               RESTful API with Node.js and MongoDB just to practice and
               show-off.
             </p> */}
-          </div>
-          <div className="skills">
-            <h2>Skills & Tools</h2>
-            <p>Here are some of the tools and technologies I've worked with:</p>
-            <div className="skills__lists">
-              <ul>
-                <li>JavaScript (ES6+)</li>
-                <li>React</li>
-                <li>Next.js</li>
-                <li>Node.js</li>
-                <li>Express.js</li>
-              </ul>
-
-              <ul>
-                <li>TypeScript</li>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>SCSS</li>
-                <li>Styled Components</li>
-              </ul>
-
-              <ul>
-                <li>VS Code</li>
-                <li>Figma</li>
-                <li>Netlify</li>
-                <li>Heroku</li>
-                <li>Sanity</li>
-              </ul>
             </div>
+            <div className="skills">
+              <h2>Skills & Tools</h2>
+              <p>
+                Here are some of the tools and technologies I've worked with:
+              </p>
+              <div className="skills__lists">
+                <ul>
+                  <li>JavaScript (ES6+)</li>
+                  <li>React</li>
+                  <li>Next.js</li>
+                  <li>Node.js</li>
+                  <li>Express.js</li>
+                </ul>
+
+                <ul>
+                  <li>TypeScript</li>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>SCSS</li>
+                  <li>Styled Components</li>
+                </ul>
+
+                <ul>
+                  <li>VS Code</li>
+                  <li>Figma</li>
+                  <li>Netlify</li>
+                  <li>Heroku</li>
+                  <li>Sanity</li>
+                </ul>
+              </div>
+            </div>
+            <div className="bigImg">PICTURE COMMING SOON</div>
           </div>
-          <div className="bigImg">PICTURE COMMING SOON</div>
-        </div>
-      </section>
-    </AboutPageStyles>
+        </section>
+      </AboutPageStyles>
+    </>
   );
 }
