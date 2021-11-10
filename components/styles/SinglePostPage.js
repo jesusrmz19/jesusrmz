@@ -72,18 +72,27 @@ const SinglePostStyles = styled.main`
       font-family: var(--light);
       color: var(--blacktxt);
       line-height: 1.8;
+      @media ${device.laptopS} {
+        font-size: 18px;
+      }
     }
     h2 {
       font-size: 25px;
       font-family: var(--bold);
       color: var(--blacktxt);
       margin: 30px 0px 15px 0px;
+      @media ${device.laptopS} {
+        font-size: 30px;
+      }
     }
     h3 {
       font-size: 20px;
       font-family: var(--bold);
       color: var(--blacktxt);
       margin: 15px 0px 15px 0px;
+      @media ${device.laptopS} {
+        font-size: 22px;
+      }
     }
     pre {
       background: black;

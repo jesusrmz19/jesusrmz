@@ -87,6 +87,13 @@ export default function Navbar() {
         >
           <Link href="/posts/">Blog</Link>
         </li>
+        <li
+          className={
+            router.pathname === '/about' ? 'menu--item active' : 'menu--item'
+          }
+        >
+          <Link href="/about">About</Link>
+        </li>
         <li className="menu--item contact">
           <a href="#contact" onClick={closeNav}>
             Contact

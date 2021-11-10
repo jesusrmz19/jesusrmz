@@ -81,7 +81,7 @@ function Home({ allProjects }) {
                   <FontAwesomeIcon icon={faGithub}></FontAwesomeIcon>
                 </a>
                 <div className="hero__text_pages">
-                  <Link href="#">about me</Link>
+                  <Link href="/about">about me</Link>
                   <Link href="/posts/">read my blog</Link>
                 </div>
               </div>

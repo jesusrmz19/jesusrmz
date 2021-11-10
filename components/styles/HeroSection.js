@@ -23,7 +23,7 @@ const HeroSection = styled.section`
   .hero__text {
     padding: 120px 0;
     @media ${device.laptop} {
-      padding: 180px 0;
+      padding: 150px 0;
     }
     p {
       font-size: 14px;
@@ -39,9 +39,11 @@ const HeroSection = styled.section`
       color: var(--blacktxt);
       font-family: var(--bold);
       margin-bottom: 30px;
-
+      letter-spacing: 3px;
       @media ${device.laptop} {
         font-size: 48px;
+
+        letter-spacing: 4.8px;
       }
     }
     &_links {
