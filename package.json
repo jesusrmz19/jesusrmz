@@ -21,6 +21,7 @@
     "@sanity/client": "^2.19.0",
     "components": "^0.1.0",
     "date-fns": "^2.24.0",
+    "framer-motion": "^5.2.1",
     "gray-matter": "^4.0.3",
     "next": "^11.1.2",
     "react": "^17.0.2",
