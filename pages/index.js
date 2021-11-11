@@ -8,6 +8,7 @@ import HeroSection from '../components/styles/HeroSection';
 import HomeProjectSection from '../components/styles/HomeProjectSection';
 import { getHomePageProjects } from '../lib/getFunctions';
 import { useNav } from '../lib/navState';
+import { motion } from 'framer-motion';
 
 export async function getStaticProps() {
   const allProjects = await getHomePageProjects();
