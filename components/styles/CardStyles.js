@@ -25,7 +25,7 @@ const CardStyles = styled.article`
     &__title {
       font-size: 25px;
       font-family: var(--bold);
-      color: var(--blacktxt);
+      color: var(--alwaysblack);
       letter-spacing: 2.5px;
       margin-top: 15px;
     }
@@ -38,7 +38,7 @@ const CardStyles = styled.article`
     &__description {
       font-size: 16px;
       font-family: var(--regular);
-      color: var(--blacktxt);
+      color: var(--alwaysblack);
     }
   }
 `;

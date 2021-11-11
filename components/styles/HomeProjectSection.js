@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { device } from '../../lib/breakpoints';
 
 const HomeProjectSection = styled.section`
-  background: white;
+  background: var(--white);
   padding-top: 70px;
   padding-bottom: 70px;
   @media ${device.laptopM} {

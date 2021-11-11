@@ -7,6 +7,8 @@ import {
   faLinkedin,
 } from '@fortawesome/free-brands-svg-icons';
 import { device } from '../lib/breakpoints';
+import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
+import { useEffect, useState } from 'react';
 
 const FooterStyles = styled.footer`
   background: var(--footerbg);
@@ -95,7 +97,8 @@ const FooterStyles = styled.footer`
       li {
         cursor: pointer;
         transition: all ease 0.2s;
-        a {
+        a,
+        button {
           color: inherit;
         }
         &:hover {
@@ -108,6 +111,11 @@ const FooterStyles = styled.footer`
 `;
 
 export default function Footer() {
+  const [activeTheme, setActiveTheme] = useState('light');
+  const inactiveTheme = activeTheme === 'light' ? 'dark' : 'light';
+  useEffect(() => {
+    document.body.dataset.theme = activeTheme;
+  }, [activeTheme]);
   return (
     <FooterStyles>
       <div className="footer--container" id="contact">
@@ -147,6 +155,13 @@ export default function Footer() {
             <li>
               <a href="https://codepen.io/jesusrmz">
                 <FontAwesomeIcon icon={faCodepen}></FontAwesomeIcon>
+              </a>
+            </li>
+            <li>
+              <a onClick={() => setActiveTheme(inactiveTheme)}>
+                <FontAwesomeIcon
+                  icon={activeTheme === 'dark' ? faSun : faMoon}
+                ></FontAwesomeIcon>
               </a>
             </li>
           </ul>

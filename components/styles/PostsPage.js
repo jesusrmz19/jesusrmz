@@ -40,7 +40,7 @@ const PostsPageStyles = styled.main`
     }
   }
   .content {
-    background: #fff;
+    background: var(--white);
     &__container {
       margin: 0 auto;
       padding: 70px 25px;
@@ -55,7 +55,6 @@ const PostsPageStyles = styled.main`
       }
       @media ${device.laptopS} {
         grid-template-columns: repeat(3, 1fr);
-
         grid-column-gap: 70px;
       }
       @media ${device.laptopM} {

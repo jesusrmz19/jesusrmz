@@ -59,7 +59,7 @@ const AboutPageStyles = styled.main`
     ul {
       font-size: 16px;
       font-family: var(--light);
-      color: var(--blacktxt);
+      color: var(--alwaysblack);
       list-style-type: disc;
       margin: 20px;
       line-height: 1.8;
@@ -71,7 +71,7 @@ const AboutPageStyles = styled.main`
     p {
       font-size: 16px;
       font-family: var(--light);
-      color: var(--blacktxt);
+      color: var(--alwaysblack);
       line-height: 1.8;
       @media ${device.laptopS} {
         font-size: 18px;
@@ -81,7 +81,7 @@ const AboutPageStyles = styled.main`
       font-size: 25px;
       letter-spacing: 2.5px;
       font-family: var(--bold);
-      color: var(--blacktxt);
+      color: var(--alwaysblack);
       margin: 30px 0px 15px 0px;
       @media ${device.laptopS} {
         font-size: 30px;
@@ -93,7 +93,7 @@ const AboutPageStyles = styled.main`
 
       letter-spacing: 2px;
       font-family: var(--bold);
-      color: var(--blacktxt);
+      color: var(--alwaysblack);
       margin: 15px 0px 15px 0px;
       @media ${device.laptopS} {
         font-size: 22px;

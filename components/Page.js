@@ -25,19 +25,18 @@ const GlobalStyles = createGlobalStyle`
     --ffbg: #f5f5f5;
     --footerbg: #f5f5f5;
     --blacktxt: #222222;
+    --alwaysblack: #222222;
     --greytxt: #aaaaaa;
-    --mainbg: #ffffff;
-    --FFText: #191b1f;
-    --bgColor: #f3f3f3;
-    --nav: #ffff;
+    --white: #ffffff;
   }
   body[data-theme="dark"]{
-    --firstFold: #191B1F;
-    --FFText: #f3f3f3;
-    --fontColor: #f3f3f3;
-    --bgColor: #191b1f;
-    --btnBg: #F3F3F3;
-    --btnTxt: #191b1f;
+    --ffbg: #1e1e1e;
+    --footerbg: #1e1e1e;
+    --blacktxt: #fff;
+    
+    --alwaysblack: #222222;
+    --greytxt: #aaaaaa;
+    --white: #f5f5f5;
   }
 
   h1,
