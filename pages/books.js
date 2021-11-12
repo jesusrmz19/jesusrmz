@@ -20,7 +20,7 @@ const BookCard = styled.div`
     &__title {
       font-size: 18px;
       font-family: var(--bold);
-      color: var(--blacktxt);
+      color: var(--alwaysblack);
     }
     &__img {
       img {
