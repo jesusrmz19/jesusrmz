@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import Link from 'next/link';
 import Head from 'next/head';
 import styled from 'styled-components';
 import { useNav } from '../lib/navState';
@@ -286,11 +287,11 @@ export default function About() {
                 every year but I’ve never read that amount in a single year and
                 I’m happy for that achivment.
               </p>
-              {/* <p>
-              You can actually see the books I’ve read here, as I’ve developed a
-              RESTful API with Node.js and MongoDB just to practice and
-              show-off.
-            </p> */}
+              <p>
+                You can actually see the books I’ve read
+                <Link href="/books"> here</Link>, as I’ve developed a RESTful
+                API with Node.js and MongoDB just to practice and show-off.
+              </p>
             </div>
             <div className="skills">
               <h2>Skills & Tools</h2>
