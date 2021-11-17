@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Project from '../components/Project';
 import HeroSection from '../components/styles/HeroSection';
 import HomeProjectSection from '../components/styles/HomeProjectSection';
+import HomeServicesSection from '../components/styles/HomeServicesSection';
 import { getHomePageProjects } from '../lib/getFunctions';
 import { useNav } from '../lib/navState';
 import { motion } from 'framer-motion';
@@ -105,6 +106,11 @@ function Home({ allProjects }) {
             </div>
           </div>
         </HomeProjectSection>
+        <HomeServicesSection>
+          <div className="servicios__container">
+            <h2>services</h2>
+          </div>
+        </HomeServicesSection>
       </main>
     </>
   );
