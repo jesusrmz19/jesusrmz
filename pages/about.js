@@ -57,6 +57,28 @@ const AboutPageStyles = styled.main`
   }
   .content {
     background: white;
+    a {
+      text-decoration: none;
+      color: inherit;
+      position: relative;
+      cursor: pointer;
+      z-index: 5;
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 5px;
+        background: #fce667;
+        z-index: -1;
+        transition: all ease 0.2s;
+      }
+      &:hover::before {
+        height: 100%;
+      }
+    }
     ul {
       font-size: 16px;
       font-family: var(--light);
@@ -288,9 +310,9 @@ export default function About() {
                 I’m happy for that achivment.
               </p>
               <p>
-                You can actually see the books I’ve read
-                <Link href="/books"> here</Link>, as I’ve developed a RESTful
-                API with Node.js and MongoDB just to practice and show-off.
+                You can actually see the books I’ve read{' '}
+                <Link href="/books">here</Link>, as I’ve developed a RESTful API
+                with Node.js and MongoDB just to practice and show-off.
               </p>
             </div>
             <div className="skills">

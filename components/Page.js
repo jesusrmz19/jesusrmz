@@ -28,6 +28,7 @@ const GlobalStyles = createGlobalStyle`
     --alwaysblack: #222222;
     --greytxt: #aaaaaa;
     --white: #ffffff;
+    --yellow: #fce667;
   }
   body[data-theme="dark"]{
     --ffbg: #1e1e1e;

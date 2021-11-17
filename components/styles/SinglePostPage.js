@@ -60,6 +60,32 @@ const SinglePostStyles = styled.main`
   .post--content {
     max-width: 800px;
     margin: 30px auto 0 auto;
+    a {
+      text-decoration: none;
+      color: inherit;
+      position: relative;
+      cursor: pointer;
+      z-index: 5;
+      transition: color ease 0.2s;
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 5px;
+        background: var(--yellow);
+        z-index: -1;
+        transition: all ease 0.2s;
+      }
+      &:hover {
+        color: var(--alwaysblack);
+      }
+      &:hover::before {
+        height: 100%;
+      }
+    }
     ul {
       font-size: 16px;
       font-family: var(--bold);
