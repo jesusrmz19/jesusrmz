@@ -47,23 +47,25 @@ const HomeServicesSection = styled.section`
   .servicios__content {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 20px;
     &_iphone {
       align-self: center;
     }
   }
   .servicios__services {
-    position: relative;
-    margin: 0 auto;
-    width: 100%;
-    border: 1px solid red;
-    min-height: 50px;
     text-align: center;
+    position: relative;
+    height: 50px;
+    width: 100%;
+    border: 1px red solid;
     overflow: hidden;
     &_one,
     &_two {
-      position: absolute;
       width: 100%;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
     }
     &_two {
       top: -100%;

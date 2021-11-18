@@ -10,6 +10,8 @@ import HomeServicesSection from '../components/styles/HomeServicesSection';
 import { getHomePageProjects } from '../lib/getFunctions';
 import { useNav } from '../lib/navState';
 import { motion } from 'framer-motion';
+import { gsap } from 'gsap/dist/gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
 export async function getStaticProps() {
   const allProjects = await getHomePageProjects();
@@ -31,8 +33,25 @@ const ProjectItem = React.forwardRef(({ onClick, href, props }, ref) => {
 
 function Home({ allProjects }) {
   const { closeNav } = useNav();
+
   useEffect(() => {
     closeNav();
+    if (typeof window !== 'undefined') {
+      gsap.registerPlugin(ScrollTrigger);
+    }
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: '.servicios__container',
+          start: '-70px top',
+          pin: true,
+          scrub: 1,
+        },
+      })
+      .to('.iphone__screen', {
+        backgroundPosition: '0px -280px',
+        duration: 0.5,
+      });
   }, []);
   return (
     <>
@@ -112,12 +131,8 @@ function Home({ allProjects }) {
             <div className="servicios__content">
               <div className="servicios__content_text">
                 <div className="servicios__services">
-                  <div className="servicios__services_one">
-                    <h3>Web Design.</h3>
-                  </div>
-                  <div className="servicios__services_two">
-                    <h3>Web Development.</h3>
-                  </div>
+                  <h3 className="servicios__services_one">Web Design.</h3>
+                  <h3 className="servicios__services_two">Web Development.</h3>
                 </div>
               </div>
               <div className="servicios__content_iphone">
