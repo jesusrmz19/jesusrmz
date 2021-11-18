@@ -109,6 +109,23 @@ function Home({ allProjects }) {
         <HomeServicesSection>
           <div className="servicios__container">
             <h2>services</h2>
+            <div className="servicios__content">
+              <div className="servicios__content_text">
+                <div className="servicios__services">
+                  <div className="servicios__services_one">
+                    <h3>Web Design.</h3>
+                  </div>
+                  <div className="servicios__services_two">
+                    <h3>Web Development.</h3>
+                  </div>
+                </div>
+              </div>
+              <div className="servicios__content_iphone">
+                <div className="iphone">
+                  <div className="iphone__screen"></div>
+                </div>
+              </div>
+            </div>
           </div>
         </HomeServicesSection>
       </main>
