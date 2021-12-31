@@ -12,6 +12,7 @@ import { useNav } from '../lib/navState';
 import { motion } from 'framer-motion';
 import { gsap } from 'gsap/dist/gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import Slider from '../components/Slider';
 
 export async function getStaticProps() {
   const allProjects = await getHomePageProjects();
@@ -130,10 +131,7 @@ function Home({ allProjects }) {
             <h2>services</h2>
             <div className="servicios__content">
               <div className="servicios__content_text">
-                <div className="servicios__services">
-                  <h3 className="servicios__services_one">Web Design.</h3>
-                  <h3 className="servicios__services_two">Web Development.</h3>
-                </div>
+                <Slider></Slider>
               </div>
               <div className="servicios__content_iphone">
                 <div className="iphone">

@@ -45,11 +45,17 @@ const HomeServicesSection = styled.section`
     }
   }
   .servicios__content {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: auto auto;
     gap: 20px;
+    &_text {
+      grid-row: 1;
+      grid-column: 1/-1;
+    }
     &_iphone {
-      align-self: center;
+      grid-row: 2;
+      grid-column: 1/-1;
     }
   }
   .servicios__services {
@@ -59,16 +65,12 @@ const HomeServicesSection = styled.section`
     width: 100%;
     border: 1px red solid;
     overflow: hidden;
-    &_one,
-    &_two {
+    &_title {
       width: 100%;
       position: absolute;
       top: 0;
       left: 50%;
       transform: translateX(-50%);
-    }
-    &_two {
-      top: -100%;
     }
   }
   .iphone {
