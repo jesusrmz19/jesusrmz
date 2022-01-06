@@ -1,10 +1,14 @@
 import styled from 'styled-components';
+import { useState } from 'react';
+import services from '../lib/services';
+import { device } from '../lib/breakpoints';
 
 const SliderStyles = styled.div`
   .slider {
     position: relative;
     margin: 0 auto;
-    height: 120px;
+    height: 220px;
+    overflow: hidden;
     &__btns {
       width: 100%;
       text-align: center;
@@ -16,13 +20,22 @@ const SliderStyles = styled.div`
         margin-left: 60px;
       }
     }
+    @media ${device.laptop} {
+      &__btns {
+        text-align: left;
+        bottom: 10px;
+      }
+    }
   }
   .slide {
     position: absolute;
     width: 100%;
+    top: 0;
+    transition: transform 1s;
   }
 
   button {
+    z-index: 500;
     text-decoration: none;
     text-transform: uppercase;
     color: var(--blacktxt);
@@ -53,37 +66,37 @@ const SliderStyles = styled.div`
 `;
 
 export default function Slider() {
+  const [currSlide, updateSlide] = useState(0);
+  const prevSlide = () => {
+    if (currSlide === 0) return;
+    updateSlide(currSlide - 1);
+  };
+  const nextSlide = () => {
+    if (currSlide === 3) return;
+    updateSlide(currSlide + 1);
+  };
   return (
     <SliderStyles>
       <div className="slider">
-        <div className="slide slide--1">
-          <div className="servicios__services">
-            <h3 className="servicios__services_tittle">Web Design.</h3>
+        {Object.keys(services).map((service, idx) => (
+          <div
+            className={`slide slide--${idx + 1}`}
+            key={service}
+            style={{ transform: `translateX(${100 * (idx - currSlide)}%)` }}
+          >
+            <div className="servicios__services">
+              <h3 className="servicios__services_tittle">
+                {services[service].title}
+              </h3>
+              <p className="servicios__services_description">
+                {services[service].content}
+              </p>
+            </div>
           </div>
-        </div>
-        {/* <div className="slide slide--2">
-          <div className="servicios__services">
-            <h3 className="servicios__services_tittle">Web Development.</h3>
-          </div>
-        </div>
-        <div className="slide slide--3">
-          <div className="servicios__services">
-            <h3 className="servicios__services_tittle">User Experience.</h3>
-          </div>
-        </div>
-        <div className="slide slide--4">
-          <div className="servicios__services">
-            <h3 className="servicios__services_tittle">SEO.</h3>
-          </div>
-        </div>
-        <div className="slide slide--5">
-          <div className="servicios__services">
-            <h3 className="servicios__services_tittle">E-Commerce.</h3>
-          </div>
-        </div> */}
+        ))}
         <div className="slider__btns">
-          <button>PREV</button>
-          <button>NEXT</button>
+          <button onClick={prevSlide}>PREV</button>
+          <button onClick={nextSlide}>NEXT</button>
         </div>
       </div>
     </SliderStyles>

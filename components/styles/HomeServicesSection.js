@@ -39,15 +39,31 @@ const HomeServicesSection = styled.section`
       font-family: var(--bold);
       color: var(--blacktxt);
       margin: 15px 0px 15px 0px;
+      @media ${device.laptop} {
+        margin: 0px 0px 15px 0px;
+      }
       @media ${device.laptopS} {
-        font-size: 22px;
+        font-size: 30px;
+        margin: 0px 0px 15px 0px;
+      }
+    }
+    p {
+      font-size: 16px;
+      font-family: var(--light);
+      color: var(--blacktxt);
+      margin: 15px 0px 15px 0px;
+      @media ${device.laptop} {
+        width: 80%;
+      }
+      @media ${device.laptopS} {
+        font-size: 18px;
       }
     }
   }
   .servicios__content {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 120px auto;
+    grid-template-rows: auto auto;
     &_text {
       grid-row: 1;
       grid-column: 1/-1;
@@ -56,6 +72,22 @@ const HomeServicesSection = styled.section`
     &_iphone {
       grid-row: 2;
       grid-column: 1/-1;
+    }
+    @media ${device.laptop} {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+      gap: 100px;
+      &_text {
+        grid-row: 1;
+        grid-column: 2/-1;
+        text-align: left;
+        align-self: center;
+      }
+      &_iphone {
+        justify-self: end;
+        grid-row: 1;
+        grid-column: 1/2;
+      }
     }
   }
   .phone {
@@ -76,6 +108,16 @@ const HomeServicesSection = styled.section`
       background: url('/screen.jpg') no-repeat;
       background-size: cover;
       background-position-y: 0;
+    }
+    @media ${device.laptop} {
+      height: 500px;
+      width: 250px;
+      &__screen {
+        top: 60px;
+        left: 17px;
+        width: 218px;
+        height: 385px;
+      }
     }
   }
 `;
