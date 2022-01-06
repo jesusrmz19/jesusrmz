@@ -40,19 +40,19 @@ function Home({ allProjects }) {
     if (typeof window !== 'undefined') {
       gsap.registerPlugin(ScrollTrigger);
     }
-    gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: '.servicios__container',
-          start: '-70px top',
-          pin: true,
-          scrub: 1,
-        },
-      })
-      .to('.iphone__screen', {
-        backgroundPosition: '0px -280px',
-        duration: 0.5,
-      });
+    // gsap
+    //   .timeline({
+    //     scrollTrigger: {
+    //       trigger: '.servicios__container',
+    //       start: '-70px top',
+    //       pin: true,
+    //       scrub: 1,
+    //     },
+    //   })
+    //   .to('.iphone__screen', {
+    //     backgroundPosition: '0px -280px',
+    //     duration: 0.5,
+    //   });
   }, []);
   return (
     <>
@@ -134,8 +134,8 @@ function Home({ allProjects }) {
                 <Slider></Slider>
               </div>
               <div className="servicios__content_iphone">
-                <div className="iphone">
-                  <div className="iphone__screen"></div>
+                <div className="phone">
+                  <div className="phone__screen"></div>
                 </div>
               </div>
             </div>

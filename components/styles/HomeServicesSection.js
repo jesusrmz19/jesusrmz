@@ -35,7 +35,7 @@ const HomeServicesSection = styled.section`
       }
     }
     h3 {
-      font-size: 20px;
+      font-size: 25px;
       font-family: var(--bold);
       color: var(--blacktxt);
       margin: 15px 0px 15px 0px;
@@ -46,34 +46,20 @@ const HomeServicesSection = styled.section`
   }
   .servicios__content {
     display: grid;
-    grid-template-columns: 1;
-    grid-template-rows: auto auto;
-    gap: 20px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 120px auto;
     &_text {
       grid-row: 1;
       grid-column: 1/-1;
+      text-align: center;
     }
     &_iphone {
       grid-row: 2;
       grid-column: 1/-1;
     }
   }
-  .servicios__services {
-    text-align: center;
-    position: relative;
-    height: 50px;
-    width: 100%;
-    border: 1px red solid;
-    overflow: hidden;
-    &_title {
-      width: 100%;
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-  }
-  .iphone {
+  .phone {
+    margin: 0 auto;
     display: block;
     height: 400px;
     width: 200px;
