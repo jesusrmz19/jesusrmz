@@ -160,6 +160,8 @@ const AboutPageStyles = styled.main`
           height: 180px;
           width: 100%;
           background: #c4c4c4;
+          background: url('../about_profile.jpg') center no-repeat;
+          background-size: cover;
           border-radius: 5px;
           display: flex;
           align-items: center;
@@ -196,7 +198,8 @@ const AboutPageStyles = styled.main`
         height: 180px;
         width: 100%;
         background: #c4c4c4;
-
+        background: url('../about_family.jpg') center no-repeat;
+        background-size: cover;
         font-family: var(--bold);
         display: flex;
         align-items: center;
@@ -275,44 +278,41 @@ export default function About() {
                   know me as the person who walks and feeds them every morning.
                 </p>
                 <p>
-                  I'm 31 years old, I'm married to a beautiful mexican wife and
-                  live with two lovely dogs named Dana and Lulu.
+                  I'm married to a beautiful mexican wife and live with two
+                  lovely dogs named Dana and Lulu.
                 </p>
               </div>
-              <div className="me__img">PICTURE COMMING SOON</div>
+              <div className="me__img"></div>
             </div>
             <div className="work">
-              <h2>Work, Education, and Stuff</h2>
+              <h2>Work, Education and Stuff.</h2>
               <p>
-                I have a degree in Electronic Engineering, and a Master in
-                Business from ITESO University, I also have a full-time job as a
-                Field Applications Engineer focused in the Automotive Industry.
-                I've been working for the same company, called Ammon & Rizos,
-                for almost 10 years but we focus mostly (99.9%) in hardware
-                design, logistics, and manufacturing.
+                I have a degree in Electronic Engineering and a Master in
+                Business from ITESO University. I'm currently working as a Field
+                Applications Engineer at Ammon & Rizos, where I've been working
+                for almost 10 years. We focus mostly on hardware design,
+                logistics and manufacturing.
               </p>
               <p>
-                I first started programming back in college but picked it up
+                I first started programming back in college and picked it up
                 again in the summer of 2017. I looked for something in the
-                software world that my 9-to-5 couldn’t give me and I’m gladly I
-                found it in this fast-growing and excentric web development
-                world. I like to create, learn, explore all of the things
-                related to web development, it’s been a lifesaver.
+                software world that my 9-to-5 couldn’t give me and I’m glad I
+                found it in this fast-growing and eccentric web development
+                world. I like to create, learn and explore all of the things
+                related to web development: it’s been a lifesaver.
               </p>
               <p>
                 When I’m not working, learning something new, writing code or
-                walking my dogs I spend my time hanging out with my wife,
+                walking my dogs, I spend my time hanging out with my wife,
                 talking, playing board games, taking photographs, reading or
                 playing basketball. I’m a huge NBA fan, I could watch basketball
-                all day, everyday. I’ve also been reading more, this year I’m up
-                to 12 books, and I know there’s people out there that reads 50
-                every year but I’ve never read that amount in a single year and
-                I’m happy for that achivment.
+                all day, everyday. I’ve also been reading more; and in 2021 I
+                read 12 books, an achievement I'm prod of.
               </p>
               <p>
-                You can actually see the books I’ve read{' '}
-                <Link href="/books">here</Link>, as I’ve developed a RESTful API
-                with Node.js and MongoDB just to practice and show-off.
+                You can see the books I’ve read on{' '}
+                <Link href="/books">this page</Link>, where I've developed a
+                RESTful API with Node.js and MongoDB.
               </p>
             </div>
             <div className="skills">
@@ -346,7 +346,7 @@ export default function About() {
                 </ul>
               </div>
             </div>
-            <div className="bigImg">PICTURE COMMING SOON</div>
+            <div className="bigImg"></div>
           </div>
         </section>
       </AboutPageStyles>
