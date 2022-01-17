@@ -68,11 +68,17 @@ const SliderStyles = styled.div`
 export default function Slider() {
   const [currSlide, updateSlide] = useState(0);
   const prevSlide = () => {
-    if (currSlide === 0) return;
+    if (currSlide === 0) {
+      updateSlide(3);
+      return;
+    }
     updateSlide(currSlide - 1);
   };
   const nextSlide = () => {
-    if (currSlide === 3) return;
+    if (currSlide === 3) {
+      updateSlide(0);
+      return;
+    }
     updateSlide(currSlide + 1);
   };
   return (
