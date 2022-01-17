@@ -138,22 +138,34 @@ export default function Footer() {
           </a>
           <ul className="footer--right__links">
             <li>
-              <a href="https://github.com/jesusrmz19">
+              <a
+                href="https://github.com/jesusrmz19"
+                aria-label="Go to my GitHub Page"
+              >
                 <FontAwesomeIcon icon={faGithub}></FontAwesomeIcon>
               </a>
             </li>
             <li>
-              <a href="https://www.linkedin.com/in/jesusrmz/">
+              <a
+                href="https://www.linkedin.com/in/jesusrmz/"
+                aria-label="Go to my LinkedIn Profile"
+              >
                 <FontAwesomeIcon icon={faLinkedin}></FontAwesomeIcon>
               </a>
             </li>
             <li>
-              <a href="https://twitter.com/jesusrmz_">
+              <a
+                href="https://twitter.com/jesusrmz_"
+                aria-label="Go to my Twitter Profile"
+              >
                 <FontAwesomeIcon icon={faTwitter}></FontAwesomeIcon>
               </a>
             </li>
             <li>
-              <a href="https://codepen.io/jesusrmz">
+              <a
+                href="https://codepen.io/jesusrmz"
+                aria-label="Go to my CodePen Page"
+              >
                 <FontAwesomeIcon icon={faCodepen}></FontAwesomeIcon>
               </a>
             </li>

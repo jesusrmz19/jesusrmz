@@ -48,6 +48,7 @@ const SliderStyles = styled.div`
     letter-spacing: 7px;
     font-family: var(--bold);
     position: relative;
+    cursor: pointer;
     &::after {
       content: '';
       display: block;
@@ -59,10 +60,8 @@ const SliderStyles = styled.div`
       background: var(--greytxt);
       transition: all ease 0.2s;
     }
-    &::hover {
-      cursor: pointer;
-    }
-    &::hover::after {
+    &:hover::after,
+    &:active::after {
       width: 100%;
       left: 0;
       background: var(--blacktxt);
