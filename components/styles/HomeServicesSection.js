@@ -48,10 +48,13 @@ const HomeServicesSection = styled.section`
       }
     }
     p {
-      font-size: 16px;
+      font-size: 14px;
       font-family: var(--light);
       color: var(--blacktxt);
       margin: 15px 0px 15px 0px;
+      @media ${device.mobileM} {
+        font-size: 16px;
+      }
       @media ${device.laptop} {
         width: 80%;
       }
