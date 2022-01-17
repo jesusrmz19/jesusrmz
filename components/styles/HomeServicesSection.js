@@ -64,6 +64,7 @@ const HomeServicesSection = styled.section`
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
+    gap: 20px;
     &_text {
       grid-row: 1;
       grid-column: 1/-1;

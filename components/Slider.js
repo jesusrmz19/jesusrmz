@@ -13,11 +13,16 @@ const SliderStyles = styled.div`
       width: 100%;
       text-align: center;
       position: absolute;
-      bottom: 35px;
+      bottom: 15px;
       left: 50%;
       transform: translateX(-50%);
       button + button {
         margin-left: 60px;
+      }
+    }
+    @media ${device.tablet} {
+      &__btns {
+        bottom: 35px;
       }
     }
     @media ${device.laptop} {
