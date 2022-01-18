@@ -91,7 +91,10 @@ export default function Project({ project }) {
         <p className="subtxt__description">{project.industry}</p>
       </div>
       <div className="img">
-        <img src={project.mainImage.asset.url} alt="La Silicia"></img>
+        <img
+          src={project.mainImage.asset.url}
+          alt={`Screenshot of ${project.title}'s webiste`}
+        ></img>
       </div>
     </ProjectStyles>
   );
