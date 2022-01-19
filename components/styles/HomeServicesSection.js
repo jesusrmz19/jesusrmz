@@ -97,7 +97,7 @@ const HomeServicesSection = styled.section`
   .phone {
     margin: 0 auto;
     display: block;
-    height: 400px;
+    height: 410px;
     width: 200px;
     background: url('/iPhone-PNG.png') no-repeat;
     background-size: cover;
@@ -105,10 +105,10 @@ const HomeServicesSection = styled.section`
     &__screen {
       position: absolute;
       display: block;
-      top: 48px;
-      left: 13px;
+      top: 50px;
+      left: 14px;
       width: 175px;
-      height: 310px;
+      height: 312px;
       background: url('/screen.jpg') no-repeat;
       background-size: cover;
       background-position-y: 0;
