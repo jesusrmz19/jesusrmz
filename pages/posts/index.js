@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Head from 'next/head';
 import sanityClient from '../../client';
 import PostsPageStyles from '../../components/styles/PostsPage';
 import { getAllBlogs } from '../../lib/getFunctions';
@@ -31,33 +32,43 @@ function PostsPage({ allBlogPosts }) {
     closeNav();
   }, []);
   return (
-    <PostsPageStyles>
-      <section className="hero">
-        <div className="hero__container">
-          <div className="hero__txt">
-            <h1>blog</h1>
-            <p>
-              <span>All my posts,</span>
-              <span>from technical to personal,</span>
-              <span>all are here.</span>
-            </p>
+    <>
+      <Head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="twitter:title" content="Jesus Ramirez | Blog" />
+        <meta name="twitter:url" content="https://jesusrmz.com/blog" />
+        <meta property="og:title" content="Jesus Ramirez | Blog" />
+        <title>Jesus Ramirez | Blog</title>
+      </Head>
+      <PostsPageStyles>
+        <section className="hero">
+          <div className="hero__container">
+            <div className="hero__txt">
+              <h1>blog</h1>
+              <p>
+                <span>All my posts,</span>
+                <span>from technical to personal,</span>
+                <span>all are here.</span>
+              </p>
+            </div>
           </div>
-        </div>
-      </section>
-      <section className="content">
-        <div className="content__container">
-          {allBlogPosts.map((blog) => (
-            <Link
-              href={`/posts/${blog.slug.current}`}
-              key={blog.slug.current}
-              passHref={true}
-            >
-              <CardItem props={blog} />
-            </Link>
-          ))}
-        </div>
-      </section>
-    </PostsPageStyles>
+        </section>
+        <section className="content">
+          <div className="content__container">
+            {allBlogPosts.map((blog) => (
+              <Link
+                href={`/posts/${blog.slug.current}`}
+                key={blog.slug.current}
+                passHref={true}
+              >
+                <CardItem props={blog} />
+              </Link>
+            ))}
+          </div>
+        </section>
+      </PostsPageStyles>
+    </>
   );
 }
 
