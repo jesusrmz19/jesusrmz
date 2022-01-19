@@ -86,6 +86,7 @@ const BooksPageStyles = styled.main`
     &__container {
       max-width: 1280px;
       margin: 0 auto;
+      text-align: center;
       @media ${device.tablet} {
         padding-left: 50px;
         padding-right: 50px;
@@ -94,15 +95,24 @@ const BooksPageStyles = styled.main`
         gap: 50px;
       }
     }
+    &__loader {
+      color: var(--blacktxt);
+      font-family: var(--bold);
+      font-size: 20px;
+      text-align: center;
+      margin: 0 auto;
+    }
   }
 `;
 
 export default function Books() {
   const [books, setBooks] = useState([]);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     fetch('https://jrmbookapi.herokuapp.com/books/all')
       .then((res) => res.json())
       .then((data) => setBooks(data));
+    setTimeout(() => setLoading(false), 5000);
   }, []);
   return (
     <>
@@ -127,18 +137,22 @@ export default function Books() {
         </section>
         <section className="books">
           <div className="books__container">
-            {books.map((book) => (
-              <BookCard className="book" key={book._id}>
-                <h2 className="book__title">{book.title}</h2>
-                <div className="book__img">
-                  <img
-                    src={book.imgUrl}
-                    alt={`Cover of the book ${book.title} by ${book.author}`}
-                  ></img>
-                </div>
-                <h3 className="book__author">By {book.author}</h3>
-              </BookCard>
-            ))}
+            {loading ? (
+              <p className="books__loader">Loading...</p>
+            ) : (
+              books.map((book) => (
+                <BookCard className="book" key={book._id}>
+                  <h2 className="book__title">{book.title}</h2>
+                  <div className="book__img">
+                    <img
+                      src={book.imgUrl}
+                      alt={`Cover of the book ${book.title} by ${book.author}`}
+                    ></img>
+                  </div>
+                  <h3 className="book__author">By {book.author}</h3>
+                </BookCard>
+              ))
+            )}
           </div>
         </section>
       </BooksPageStyles>
