@@ -91,6 +91,12 @@ const FooterStyles = styled.footer`
       display: flex;
       font-size: 20px;
       color: var(--greytxt);
+      button {
+        margin: 0;
+        padding: 0;
+        font-size: 20px;
+        cursor: pointer;
+      }
       li + li {
         margin-left: 20px;
       }
@@ -170,11 +176,14 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a onClick={() => setActiveTheme(inactiveTheme)}>
+              <button
+                onClick={() => setActiveTheme(inactiveTheme)}
+                aria-label="Theme Button"
+              >
                 <FontAwesomeIcon
                   icon={activeTheme === 'dark' ? faSun : faMoon}
                 ></FontAwesomeIcon>
-              </a>
+              </button>
             </li>
           </ul>
         </div>

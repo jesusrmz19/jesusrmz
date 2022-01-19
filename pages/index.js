@@ -99,6 +99,7 @@ function Home({ allProjects }) {
                 <a
                   href="https://github.com/jesusrmz19"
                   className="hero__text_git"
+                  aria-label="Go to my GitHub Profile"
                 >
                   <FontAwesomeIcon icon={faGithub}></FontAwesomeIcon>
                 </a>
