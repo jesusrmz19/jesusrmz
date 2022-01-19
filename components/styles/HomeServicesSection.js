@@ -37,7 +37,7 @@ const HomeServicesSection = styled.section`
     h3 {
       font-size: 25px;
       font-family: var(--bold);
-      color: var(--blacktxt);
+      color: var(--alwaysblack);
       margin: 15px 0px 15px 0px;
       @media ${device.laptop} {
         margin: 0px 0px 15px 0px;
@@ -50,7 +50,7 @@ const HomeServicesSection = styled.section`
     p {
       font-size: 14px;
       font-family: var(--light);
-      color: var(--blacktxt);
+      color: var(--alwaysblack);
       margin: 15px 0px 15px 0px;
       @media ${device.mobileM} {
         font-size: 16px;

@@ -43,7 +43,7 @@ const SliderStyles = styled.div`
     z-index: 500;
     text-decoration: none;
     text-transform: uppercase;
-    color: var(--blacktxt);
+    color: var(--alwaysblack);
     font-size: 14px;
     letter-spacing: 7px;
     font-family: var(--bold);
