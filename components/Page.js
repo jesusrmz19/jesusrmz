@@ -1,6 +1,7 @@
 import styled, { createGlobalStyle } from 'styled-components';
 import Footer from './Footer';
 import Header from './Header';
+import InitialTransition from './InitialTransition';
 
 const GlobalStyles = createGlobalStyle`
   *,
@@ -59,12 +60,16 @@ const GlobalStyles = createGlobalStyle`
     border: none;
     background: none;
   }
+  .overflow-hidden {
+    overflow: hidden;
+  }
 `;
 
 export default function Page({ children }) {
   return (
     <div>
       <GlobalStyles />
+      <InitialTransition></InitialTransition>
       <Header></Header>
       {children}
       <Footer></Footer>
