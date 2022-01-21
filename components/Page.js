@@ -69,7 +69,6 @@ export default function Page({ children }) {
   return (
     <div>
       <GlobalStyles />
-      <InitialTransition></InitialTransition>
       <Header></Header>
       {children}
       <Footer></Footer>

@@ -32,28 +32,38 @@ const ProjectItem = React.forwardRef(({ onClick, href, props }, ref) => {
   );
 });
 
+const hero = {
+  initial: { y: -20, opacity: 0 },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.7,
+      ease: [0.6, -0.05, 0.01, 0.99],
+    },
+  },
+};
+
+const content = {
+  initial: { y: -20, opacity: 0 },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      delay: 0.15,
+      duration: 0.7,
+      ease: [0.6, -0.05, 0.01, 0.99],
+    },
+  },
+};
+
 function Home({ allProjects }) {
   const { closeNav } = useNav();
 
   useEffect(() => {
     closeNav();
-    if (typeof window !== 'undefined') {
-      gsap.registerPlugin(ScrollTrigger);
-    }
-    // gsap
-    //   .timeline({
-    //     scrollTrigger: {
-    //       trigger: '.servicios__container',
-    //       start: '-70px top',
-    //       pin: true,
-    //       scrub: 1,
-    //     },
-    //   })
-    //   .to('.iphone__screen', {
-    //     backgroundPosition: '0px -280px',
-    //     duration: 0.5,
-    //   });
   }, []);
+
   return (
     <>
       <Head>
@@ -88,7 +98,12 @@ function Home({ allProjects }) {
       </Head>
       <main>
         <HeroSection>
-          <div className="hero__container">
+          <motion.div
+            animate="animate"
+            initial="initial"
+            variants={hero}
+            className="hero__container"
+          >
             <div className="hero__text">
               <p>¡hola!</p>
               <h1>
@@ -109,10 +124,15 @@ function Home({ allProjects }) {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </HeroSection>
         <HomeProjectSection>
-          <div className="projects__container">
+          <motion.div
+            animate="animate"
+            initial="initial"
+            variants={content}
+            className="projects__container"
+          >
             <h2>projects</h2>
             <div className="projects">
               {allProjects.map((project) => (
@@ -125,7 +145,7 @@ function Home({ allProjects }) {
                 </Link>
               ))}
             </div>
-          </div>
+          </motion.div>
         </HomeProjectSection>
         <HomeServicesSection>
           <div className="servicios__container">

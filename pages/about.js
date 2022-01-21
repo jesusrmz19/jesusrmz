@@ -4,8 +4,9 @@ import Head from 'next/head';
 import styled from 'styled-components';
 import { useNav } from '../lib/navState';
 import { device } from '../lib/breakpoints';
+import { motion } from 'framer-motion';
 
-const AboutPageStyles = styled.main`
+const AboutPageStyles = styled(motion.main)`
   .hero {
     background: var(--ffbg);
     &__container {
@@ -216,6 +217,36 @@ const AboutPageStyles = styled.main`
     }
   }
 `;
+const all = {
+  animate: {
+    transition: { staggerChildren: 0.1, delayChildren: 2.8 },
+  },
+};
+
+const hero = {
+  initial: { y: -20, opacity: 0 },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.7,
+      ease: [0.6, -0.05, 0.01, 0.99],
+    },
+  },
+};
+
+const content = {
+  initial: { y: -20, opacity: 0 },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      delay: 0.15,
+      duration: 0.7,
+      ease: [0.6, -0.05, 0.01, 0.99],
+    },
+  },
+};
 
 export default function About() {
   const { closeNav } = useNav();
@@ -254,8 +285,18 @@ export default function About() {
         <link rel="apple-touch-icon" href="/apple-touch-icon.png"></link>
         <title>Jesus Ramirez | About Me</title>
       </Head>
-      <AboutPageStyles>
-        <section className="hero">
+      <AboutPageStyles
+        as={motion.main}
+        variants={all}
+        animate="animate"
+        initial="initial"
+      >
+        <motion.section
+          animate="animate"
+          initial="initial"
+          variants={hero}
+          className="hero"
+        >
           <div className="hero__container">
             <div className="hero__text">
               <h1>about</h1>
@@ -266,8 +307,13 @@ export default function About() {
               </p>
             </div>
           </div>
-        </section>
-        <section className="content">
+        </motion.section>
+        <motion.section
+          animate="animate"
+          initial="initial"
+          variants={content}
+          className="content"
+        >
           <div className="content__container">
             <div className="me">
               <div className="me__txt">
@@ -348,7 +394,7 @@ export default function About() {
             </div>
             <div className="bigImg"></div>
           </div>
-        </section>
+        </motion.section>
       </AboutPageStyles>
     </>
   );
