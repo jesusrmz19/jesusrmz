@@ -5,11 +5,12 @@ import '../components/styles/styles.css';
 import { NavStateProvider } from '../lib/navState';
 import Page from '../components/Page';
 import Head from 'next/head';
+import { AnimatePresence } from 'framer-motion';
 
 config.autoAddCss = false;
 library.add(fab);
 
-export default function MyApp({ Component, pageProps }) {
+export default function MyApp({ Component, pageProps, router }) {
   return (
     <>
       <Head>
@@ -36,7 +37,9 @@ export default function MyApp({ Component, pageProps }) {
       </Head>
       <NavStateProvider>
         <Page>
-          <Component {...pageProps} />
+          <AnimatePresence exitBeforeEnter>
+            <Component {...pageProps} key={router.route} />
+          </AnimatePresence>
         </Page>
       </NavStateProvider>
     </>

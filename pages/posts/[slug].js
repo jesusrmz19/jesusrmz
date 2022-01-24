@@ -7,6 +7,7 @@ import styled from 'styled-components';
 import { setDate } from '../../lib/helpers';
 import { device } from '../../lib/breakpoints';
 import SinglePostStyles from '../../components/styles/SinglePostPage';
+import { motion } from 'framer-motion';
 
 const serializers = {
   types: {
@@ -15,6 +16,49 @@ const serializers = {
         <code>{props.node.code}</code>
       </pre>
     ),
+  },
+};
+
+let easing = [0.175, 0.85, 0.42, 0.96];
+
+const imageVariants = {
+  exit: { y: 150, opacity: 0, transition: { duration: 0.5, ease: easing } },
+  enter: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      ease: easing,
+    },
+  },
+};
+
+const textVariants = {
+  exit: { y: 100, opacity: 0, transition: { duration: 0.5, ease: easing } },
+  enter: {
+    y: 0,
+    opacity: 1,
+    transition: { delay: 0.1, duration: 0.5, ease: easing },
+  },
+};
+
+const backVariants = {
+  exit: {
+    x: 100,
+    opacity: 0,
+    transition: {
+      duration: 0.5,
+      ease: easing,
+    },
+  },
+  enter: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      delay: 0.5,
+      duration: 0.5,
+      ease: easing,
+    },
   },
 };
 
@@ -53,15 +97,24 @@ export default function SinglePostPage({ data }) {
         <title>{data[0].title}</title>
       </Head>
       <SinglePostStyles>
-        <div className="post--container">
-          <div className="post--header">
+        <motion.div
+          initial="exit"
+          animate="enter"
+          exit="exit"
+          className="post--container"
+        >
+          <motion.div variants={textVariants} className="post--header">
             <h1 className="post--header-title">{data[0].title}</h1>
             <p className="post--header-date">{setDate(data[0].date)}</p>
-          </div>
+          </motion.div>
           <div className="post--img">
-            <img src={data[0].mainImage.asset.url} alt={data[0].altMainImage} />
+            <motion.img
+              variants={imageVariants}
+              src={data[0].mainImage.asset.url}
+              alt={data[0].altMainImage}
+            />
           </div>
-          <div className="post--content">
+          <motion.div variants={textVariants} className="post--content">
             <BlockContent
               blocks={data[0].body}
               projectId="nxsxkxc5"
@@ -69,8 +122,8 @@ export default function SinglePostPage({ data }) {
               className="post--content"
               serializers={serializers}
             ></BlockContent>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </SinglePostStyles>
     </>
   );

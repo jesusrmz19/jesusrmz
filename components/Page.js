@@ -1,7 +1,6 @@
 import styled, { createGlobalStyle } from 'styled-components';
 import Footer from './Footer';
 import Header from './Header';
-import InitialTransition from './InitialTransition';
 
 const GlobalStyles = createGlobalStyle`
   *,
