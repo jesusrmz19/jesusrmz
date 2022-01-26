@@ -423,8 +423,8 @@ export default function About() {
                 </p>
                 <p>
                   When I’m not working, learning something new, writing code or
-                  walking my <Link href="/dogs">dogs</Link>, I spend my time
-                  hanging out with my wife, talking, playing board games, taking
+                  walking my <Link href="#">dogs</Link>, I spend my time hanging
+                  out with my wife, talking, playing board games, taking
                   photographs, reading or playing basketball. I’m a huge NBA
                   fan, I could watch basketball all day, everyday. I’ve also
                   been reading more; and in 2021 I read 12 books, an achievement
@@ -495,8 +495,8 @@ export default function About() {
                 </p>
                 <p>
                   When I’m not working, learning something new, writing code or
-                  walking my <Link href="/dogs">dogs</Link>, I spend my time
-                  hanging out with my wife, reading or playing basketball.
+                  walking my <Link href="#">dogs</Link>, I spend my time hanging
+                  out with my wife, reading or playing basketball.
                 </p>
                 <p>
                   You can see the books I’ve read on{' '}
