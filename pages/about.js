@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
 import styled from 'styled-components';
@@ -139,6 +139,12 @@ const AboutPageStyles = styled(motion.main)`
         width: 100%;
       }
     }
+    &__text {
+      display: none;
+    }
+    .content__text.active {
+      display: block;
+    }
     &__container {
       max-width: 800px;
       margin: 70px auto 70px auto;
@@ -215,6 +221,43 @@ const AboutPageStyles = styled(motion.main)`
         }
       }
     }
+    &__toggler {
+      width: 70%;
+      height: 40px;
+      display: flex;
+      margin: 0 auto 15px auto;
+      justify-content: center;
+      .toggler__btns {
+        display: inline-block;
+        text-align: center;
+        z-index: 500;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: var(--alwaysblack);
+        font-size: 14px;
+        font-family: var(--bold);
+        position: relative;
+        cursor: pointer;
+        border: 2px solid var(--alwaysblack);
+        border-radius: 5px;
+        padding: 0.4em 1.2em;
+        transition: all ease 0.3s;
+
+        &:hover {
+          background: var(--alwaysblack);
+          color: var(--white);
+          border: 2px solid var(--alwaysblack);
+        }
+      }
+      .toggler__btns.active {
+        background: var(--alwaysblack);
+        color: var(--white);
+        border: 2px solid var(--alwaysblack);
+      }
+      button + button {
+        margin-left: 60px;
+      }
+    }
   }
 `;
 const all = {
@@ -250,9 +293,23 @@ const content = {
 
 export default function About() {
   const { closeNav } = useNav();
+
+  const [activeText, setActiveText] = useState('short');
+
   useEffect(() => {
     closeNav();
   }, []);
+
+  const handleBtn = (e) => {
+    e.preventDefault();
+    let target = e.target.id;
+    document.querySelector(`#${activeText}`).classList.remove('active');
+    document.querySelector(`.${activeText}`).classList.remove('active');
+    document.querySelector(`.${target}`).classList.add('active');
+    document.querySelector(`#${target}`).classList.add('active');
+    setActiveText(target);
+  };
+
   return (
     <>
       <Head>
@@ -315,84 +372,221 @@ export default function About() {
           className="content"
         >
           <div className="content__container">
-            <div className="me">
-              <div className="me__txt">
-                <h2>About me.</h2>
+            <div className="content__toggler">
+              <button
+                id="short"
+                className="toggler__btns active"
+                onClick={handleBtn}
+              >
+                Short
+              </button>
+              <button id="medium" className="toggler__btns" onClick={handleBtn}>
+                Medium
+              </button>
+              <button id="long" className="toggler__btns" onClick={handleBtn}>
+                Long
+              </button>
+            </div>
+            <div className="content__text long">
+              <div className="me">
+                <div className="me__txt">
+                  <h2>About me.</h2>
+                  <p>
+                    Hola, I'm Jesús. I'm a Guadalajara-based freelance web
+                    designer and developer. You probably don't know me but my
+                    dogs know me as the person who walks and feeds them every
+                    morning.
+                  </p>
+                  <p>
+                    I'm married to a beautiful mexican wife and live with two
+                    lovely dogs named Dana and Lulu.
+                  </p>
+                </div>
+                <div className="me__img"></div>
+              </div>
+              <div className="work">
+                <h2>Work, Education and Stuff.</h2>
                 <p>
-                  Hola, I'm Jesús. I'm a Guadalajara-based freelance web
-                  designer and developer. You probably don't know me but my dogs
-                  know me as the person who walks and feeds them every morning.
+                  I have a degree in Electronic Engineering and a Master in
+                  Business from ITESO University. I'm currently working as a
+                  Field Applications Engineer at Ammon & Rizos, where I've been
+                  working for almost 10 years. We focus mostly on hardware
+                  design, logistics and manufacturing.
                 </p>
                 <p>
-                  I'm married to a beautiful mexican wife and live with two
-                  lovely dogs named Dana and Lulu.
+                  I first started programming back in college and picked it up
+                  again in the summer of 2017. I looked for something in the
+                  software world that my 9-to-5 couldn’t give me and I’m glad I
+                  found it in this fast-growing and eccentric web development
+                  world. I like to create, learn and explore all of the things
+                  related to web development: it’s been a lifesaver.
+                </p>
+                <p>
+                  When I’m not working, learning something new, writing code or
+                  walking my <Link href="/dogs">dogs</Link>, I spend my time
+                  hanging out with my wife, talking, playing board games, taking
+                  photographs, reading or playing basketball. I’m a huge NBA
+                  fan, I could watch basketball all day, everyday. I’ve also
+                  been reading more; and in 2021 I read 12 books, an achievement
+                  I'm prod of.
+                </p>
+                <p>
+                  You can see the books I’ve read on{' '}
+                  <Link href="/books">this page</Link>, where I've developed a
+                  RESTful API with Node.js and MongoDB.
                 </p>
               </div>
-              <div className="me__img"></div>
-            </div>
-            <div className="work">
-              <h2>Work, Education and Stuff.</h2>
-              <p>
-                I have a degree in Electronic Engineering and a Master in
-                Business from ITESO University. I'm currently working as a Field
-                Applications Engineer at Ammon & Rizos, where I've been working
-                for almost 10 years. We focus mostly on hardware design,
-                logistics and manufacturing.
-              </p>
-              <p>
-                I first started programming back in college and picked it up
-                again in the summer of 2017. I looked for something in the
-                software world that my 9-to-5 couldn’t give me and I’m glad I
-                found it in this fast-growing and eccentric web development
-                world. I like to create, learn and explore all of the things
-                related to web development: it’s been a lifesaver.
-              </p>
-              <p>
-                When I’m not working, learning something new, writing code or
-                walking my dogs, I spend my time hanging out with my wife,
-                talking, playing board games, taking photographs, reading or
-                playing basketball. I’m a huge NBA fan, I could watch basketball
-                all day, everyday. I’ve also been reading more; and in 2021 I
-                read 12 books, an achievement I'm prod of.
-              </p>
-              <p>
-                You can see the books I’ve read on{' '}
-                <Link href="/books">this page</Link>, where I've developed a
-                RESTful API with Node.js and MongoDB.
-              </p>
-            </div>
-            <div className="skills">
-              <h2>Skills & Tools</h2>
-              <p>
-                Here are some of the tools and technologies I've worked with:
-              </p>
-              <div className="skills__lists">
-                <ul>
-                  <li>JavaScript (ES6+)</li>
-                  <li>React</li>
-                  <li>Next.js</li>
-                  <li>Node.js</li>
-                  <li>Express.js</li>
-                </ul>
+              <div className="skills">
+                <h2>Skills & Tools</h2>
+                <p>
+                  Here are some of the tools and technologies I've worked with:
+                </p>
+                <div className="skills__lists">
+                  <ul>
+                    <li>JavaScript (ES6+)</li>
+                    <li>React</li>
+                    <li>Next.js</li>
+                    <li>Node.js</li>
+                    <li>Express.js</li>
+                  </ul>
 
-                <ul>
-                  <li>TypeScript</li>
-                  <li>HTML</li>
-                  <li>CSS</li>
-                  <li>SCSS</li>
-                  <li>Styled Components</li>
-                </ul>
+                  <ul>
+                    <li>TypeScript</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>SCSS</li>
+                    <li>Styled Components</li>
+                  </ul>
 
-                <ul>
-                  <li>VS Code</li>
-                  <li>Figma</li>
-                  <li>Netlify</li>
-                  <li>Heroku</li>
-                  <li>Sanity</li>
-                </ul>
+                  <ul>
+                    <li>VS Code</li>
+                    <li>Figma</li>
+                    <li>Netlify</li>
+                    <li>Heroku</li>
+                    <li>Sanity</li>
+                  </ul>
+                </div>
               </div>
+              <div className="bigImg"></div>
             </div>
-            <div className="bigImg"></div>
+            <div className="content__text medium">
+              <div className="me">
+                <div className="me__txt">
+                  <h2>About me.</h2>
+                  <p>
+                    Hola, I'm Jesús. I'm a Guadalajara-based freelance web
+                    designer and developer. You probably don't know me but my
+                    dogs know me as the person who walks and feeds them every
+                    morning.
+                  </p>
+                  <p>
+                    I'm married to a beautiful mexican wife and live with two
+                    lovely dogs named Dana and Lulu.
+                  </p>
+                </div>
+                <div className="me__img"></div>
+              </div>
+              <div className="work">
+                <h2>Work, Education and Stuff.</h2>
+                <p>
+                  I have a degree in Electronic Engineering and a Master in
+                  Business from ITESO University. I'm currently working as a
+                  Field Applications Engineer at Ammon & Rizos.
+                </p>
+                <p>
+                  When I’m not working, learning something new, writing code or
+                  walking my <Link href="/dogs">dogs</Link>, I spend my time
+                  hanging out with my wife, reading or playing basketball.
+                </p>
+                <p>
+                  You can see the books I’ve read on{' '}
+                  <Link href="/books">this page</Link>, where I've developed a
+                  RESTful API with Node.js and MongoDB.
+                </p>
+              </div>
+              <div className="skills">
+                <h2>Skills & Tools</h2>
+                <p>
+                  Here are some of the tools and technologies I've worked with:
+                </p>
+                <div className="skills__lists">
+                  <ul>
+                    <li>JavaScript (ES6+)</li>
+                    <li>React</li>
+                    <li>Next.js</li>
+                    <li>Node.js</li>
+                    <li>Express.js</li>
+                  </ul>
+
+                  <ul>
+                    <li>TypeScript</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>SCSS</li>
+                    <li>Styled Components</li>
+                  </ul>
+
+                  <ul>
+                    <li>VS Code</li>
+                    <li>Figma</li>
+                    <li>Netlify</li>
+                    <li>Heroku</li>
+                    <li>Sanity</li>
+                  </ul>
+                </div>
+              </div>
+              <div className="bigImg"></div>
+            </div>
+            <div className="content__text active short">
+              <div className="me">
+                <div className="me__txt">
+                  <h2>About me.</h2>
+                  <p>
+                    Hola, I'm Jesús. I'm a Guadalajara-based freelance web
+                    designer and developer. You probably don't know me but my
+                    dogs know me as the person who walks and feeds them every
+                    morning.
+                  </p>
+                  <p>
+                    I'm married to a beautiful mexican wife and live with two
+                    lovely dogs named Dana and Lulu.
+                  </p>
+                </div>
+                <div className="me__img"></div>
+              </div>
+              <div className="skills">
+                <h2>Skills & Tools</h2>
+                <p>
+                  Here are some of the tools and technologies I've worked with:
+                </p>
+                <div className="skills__lists">
+                  <ul>
+                    <li>JavaScript (ES6+)</li>
+                    <li>React</li>
+                    <li>Next.js</li>
+                    <li>Node.js</li>
+                    <li>Express.js</li>
+                  </ul>
+
+                  <ul>
+                    <li>TypeScript</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>SCSS</li>
+                    <li>Styled Components</li>
+                  </ul>
+
+                  <ul>
+                    <li>VS Code</li>
+                    <li>Figma</li>
+                    <li>Netlify</li>
+                    <li>Heroku</li>
+                    <li>Sanity</li>
+                  </ul>
+                </div>
+              </div>
+              <div className="bigImg"></div>
+            </div>
           </div>
         </motion.section>
       </AboutPageStyles>
